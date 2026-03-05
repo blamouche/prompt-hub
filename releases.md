@@ -1,5 +1,11 @@
 # Releases
 
+## 0.2.7 - 2026-03-05
+
+- Functional evolution: installer now generates `agents.md` by merging the full content of local files from `./.prompt-hub/app`, `./.prompt-hub/core`, and selected domain files in `./.prompt-hub/domain`.
+- Functional evolution: installer now removes non-selected domain files from local `./.prompt-hub/domain` after selection.
+- Fix: updated README installer behavior description to match merged `agents.md` generation and local domain cleanup.
+
 ## 0.2.6 - 2026-03-05
 
 - Functional evolution: changed installer output so `agents.md` now references selected core/domain prompt files instead of embedding full prompt contents.

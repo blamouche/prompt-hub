@@ -135,3 +135,35 @@
   commands_executed: apply_patch, bash -n install-prompt-hub.sh, printf '1\n' | bash ./install-prompt-hub.sh (in temp directory)
   outcome_status: success
   next_relevant_step: Stage, commit, and push installer behavior update.
+
+- date_time: 2026-03-05 14:42:35 CET
+  actor: agent
+  action_summary: Loaded and aligned behavior to repository agent prompts from agents.md (core and app-development).
+  files_changed: memory.md
+  commands_executed: cat ./.prompt-hub/core/core.md, cat ./.prompt-hub/domain/app-development.md, tail -n 80 memory.md
+  outcome_status: success
+  next_relevant_step: Apply these prompt policies to all subsequent tasks in this repository.
+
+- date_time: 2026-03-05 14:43:22 CET
+  actor: agent
+  action_summary: Created a new HTML test page.
+  files_changed: test.html, memory.md
+  commands_executed: rg --files -g '*.html', cat > test.html
+  outcome_status: success
+  next_relevant_step: Open test.html in a browser to verify rendering.
+
+- date_time: 2026-03-05 14:44:39 CET
+  actor: agent
+  action_summary: Removed all HTML files from the repository.
+  files_changed: hello.html, hello-world.html, news.html, test.html, memory.md
+  commands_executed: find . -type f -name '*.html' | sort, find . -type f -name '*.html' -delete
+  outcome_status: success
+  next_relevant_step: Recreate any required HTML entrypoints if needed.
+
+- date_time: 2026-03-05 14:54:24 CET
+  actor: agent
+  action_summary: Updated installer to merge app/core/selected-domain file contents into agents.md and delete non-selected local domain files; aligned README and versioning records.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: ls -la .prompt-hub, find .prompt-hub -maxdepth 3 -type f, sed -n on install-prompt-hub.sh, rg -n on README.md, apply_patch, bash -n install-prompt-hub.sh, local installer smoke test with fallback archive URL
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push installer behavior update.

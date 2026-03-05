@@ -110,17 +110,51 @@ if [[ ! -f "$CORE_FILE" ]]; then
   exit 1
 fi
 
+selected_domains_pattern="|"
+for selected_domain_file in "${SELECTED_DOMAIN_FILES[@]}"; do
+  selected_domains_pattern="${selected_domains_pattern}${selected_domain_file}|"
+done
+
+for domain_file in "${domain_files[@]}"; do
+  if [[ "$selected_domains_pattern" != *"|$domain_file|"* ]]; then
+    rm -f "$DOMAIN_DIR/$domain_file"
+  fi
+done
+
+append_file_to_agents() {
+  local file_path="$1"
+  local relative_path
+  relative_path="./${file_path#"$PWD"/}"
+  {
+    echo "## Source: \`$relative_path\`"
+    echo ""
+    cat "$file_path"
+    echo ""
+    echo ""
+  } >> "$AGENT_FILE"
+}
+
 {
   echo "# Agents"
   echo ""
-  echo "Use the following prompt files:"
+  echo "Merged prompt content from app, core, and selected domain file(s)."
   echo ""
-  echo "- Core: \`./.prompt-hub/core/core.md\`"
-  for selected_domain_file in "${SELECTED_DOMAIN_FILES[@]}"; do
-    echo "- Domain: \`./.prompt-hub/domain/$selected_domain_file\`"
-  done
-  printf "\n"
 } > "$AGENT_FILE"
+
+TARGET_APP_DIR="$TARGET_DIR/app"
+if [[ -d "$TARGET_APP_DIR" ]]; then
+  while IFS= read -r app_file; do
+    append_file_to_agents "$app_file"
+  done < <(find "$TARGET_APP_DIR" -type f | sort)
+fi
+
+while IFS= read -r core_file; do
+  append_file_to_agents "$core_file"
+done < <(find "$TARGET_DIR/core" -type f | sort)
+
+for selected_domain_file in "${SELECTED_DOMAIN_FILES[@]}"; do
+  append_file_to_agents "$DOMAIN_DIR/$selected_domain_file"
+done
 
 selected_domains_display=""
 for selected_domain_file in "${SELECTED_DOMAIN_FILES[@]}"; do
@@ -134,3 +168,4 @@ done
 echo ""
 echo "Created: $AGENT_FILE"
 echo "Using domains: $selected_domains_display"
+echo "Removed unselected domain files from: $DOMAIN_DIR"

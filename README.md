@@ -36,7 +36,11 @@ This command:
 The `install-prompt-hub.sh` script:
 - retrieves `prompt-library` content and copies it into `./.prompt-hub`
 - asks which domain file(s) (`.md`) to use from `./.prompt-hub/domain`
-- generates `./agents.md` with references to `core/core.md` and the selected domain file(s)
+- generates `./agents.md` by merging:
+  - all files from `./.prompt-hub/app`
+  - all files from `./.prompt-hub/core`
+  - the selected file(s) from `./.prompt-hub/domain`
+- removes non-selected domain files from local `./.prompt-hub/domain`
 
 ### Requirements
 
