@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.12 - 2026-03-05
+
+- Functional evolution: added `prompt-library/app/market-watch.md` with `LIST_FILE="LIST.md"` variable definition.
+
 ## 0.2.11 - 2026-03-05
 
 - Functional evolution: installer now creates `.bkp` backups for existing files in `./.prompt-hub/app` before copying new app files.
