@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.10 - 2026-03-05
+
+- Functional evolution: renamed Market Watch agent `list-add-agent` to `url-add`, including its usage command `/url-add <url1> [url2] [url3] ...`.
+
 ## 0.2.9 - 2026-03-05
 
 - Fix: updated Market Watch entry command in usage from `/market-watch <agent> [arguments]` to `/agents <agent> [arguments]`.
