@@ -31,7 +31,7 @@ mkdir -p "$TARGET_DIR"
 
 # Update strategy:
 # - core/domain: replace entirely from source.
-# - app: merge by filename (overwrite same-name files, keep local-only files).
+# - app: only replace files ending with ".sample"; keep all other local app files unchanged.
 for section in core domain; do
   SRC_SECTION_DIR="$SRC_DIR/$section"
   TARGET_SECTION_DIR="$TARGET_DIR/$section"
@@ -47,11 +47,15 @@ TARGET_APP_DIR="$TARGET_DIR/app"
 app_backup_created="false"
 if [[ -d "$SRC_APP_DIR" ]]; then
   mkdir -p "$TARGET_APP_DIR"
-  while IFS= read -r existing_app_file; do
-    cp "$existing_app_file" "${existing_app_file}.bkp"
-    app_backup_created="true"
-  done < <(find "$TARGET_APP_DIR" -type f ! -name '*.bkp' | sort)
-  cp -R "$SRC_APP_DIR"/. "$TARGET_APP_DIR"/
+  while IFS= read -r src_sample_file; do
+    sample_name="$(basename "$src_sample_file")"
+    target_sample_file="$TARGET_APP_DIR/$sample_name"
+    if [[ -f "$target_sample_file" ]]; then
+      cp "$target_sample_file" "${target_sample_file}.bkp"
+      app_backup_created="true"
+    fi
+    cp "$src_sample_file" "$target_sample_file"
+  done < <(find "$SRC_APP_DIR" -type f -name '*.sample' | sort)
 fi
 
 app_backup_files=()

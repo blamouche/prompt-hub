@@ -1,5 +1,12 @@
 # Releases
 
+## 0.2.13 - 2026-03-05
+
+- Functional evolution: installer now updates `./.prompt-hub/app` by replacing only files ending with `.sample`.
+- Fix: existing non-`.sample` files in `./.prompt-hub/app` are now preserved unchanged during install/upgrade.
+- Fix: app backup behavior now applies to replaced `.sample` files only.
+- Fix: updated README installer behavior description for `.sample`-only replacement in app.
+
 ## 0.2.12 - 2026-03-05
 
 - Functional evolution: added `prompt-library/app/market-watch.md` with `LIST_FILE="LIST.md"` variable definition.

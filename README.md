@@ -35,7 +35,8 @@ This command:
 
 The `install-prompt-hub.sh` script:
 - retrieves `prompt-library` content and copies it into `./.prompt-hub`
-- before copying app updates, backs up existing files in `./.prompt-hub/app` with `.bkp` suffix
+- in `./.prompt-hub/app`, replaces only files ending with `.sample`
+- before replacing `.sample` app files, backs up existing target `.sample` files with `.bkp` suffix
 - asks which domain file(s) (`.md`) to use from `./.prompt-hub/domain`
 - generates `./agents.md` by merging:
   - all files from `./.prompt-hub/app`

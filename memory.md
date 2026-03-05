@@ -207,3 +207,11 @@
   commands_executed: ls -la prompt-library, ls -la .prompt-hub, cat > prompt-library/app/market-watch.md, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push the new app file.
+
+- date_time: 2026-03-05 15:23:16 CET
+  actor: agent
+  action_summary: Updated installer app-sync strategy to replace only .sample files, preserve non-.sample local app files, and keep backup/warning behavior scoped to replaced .sample files.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: nl -ba install-prompt-hub.sh, nl -ba README.md, apply_patch, bash -n install-prompt-hub.sh, local sample-only installer smoke test, date
+  outcome_status: success
+  next_relevant_step: Commit and push the app .sample replacement behavior update.
