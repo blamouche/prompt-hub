@@ -2,7 +2,7 @@
 
 ## Quick Start
 
-Depuis le dossier cible (le dossier ou vous voulez generer `./.prompt-hub` et `./agents.md`) :
+Run the command from the target directory (the directory where you want to generate `./.prompt-hub` and `./agents.md`):
 
 ### Installation
 
@@ -10,9 +10,9 @@ Depuis le dossier cible (le dossier ou vous voulez generer `./.prompt-hub` et `.
 bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh)
 ```
 
-### Mise a jour
+### Update
 
-Relancez exactement la meme commande :
+Run the exact same command again:
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh)
@@ -20,48 +20,48 @@ bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/in
 
 ### Important
 
-- Ne modifiez jamais le contenu du dossier `./.prompt-hub`.
-- Ce dossier est ecrase/reconstruit pendant les mises a jour.
+- Never edit files inside `./.prompt-hub`.
+- This directory is overwritten/rebuilt during updates.
 
-Prérequis :
+Requirements:
 - `bash`, `curl`, `tar`
 
-Cette commande :
-- télécharge le script d'installation depuis GitHub
-- exécute le script dans votre dossier courant
-- crée/met à jour `./.prompt-hub` puis génère `./agents.md`
+This command:
+- downloads the install script from GitHub
+- runs the script in your current directory
+- creates/updates `./.prompt-hub` and generates `./agents.md`
 
-## Utiliser le script d'installation (local)
+## Use the Local Install Script
 
-Le script `install-prompt-hub.sh` permet de :
-- récupérer le contenu de `prompt-library` et le copier dans `./.prompt-hub`
-- demander quel(s) fichier(s) de domaine (`.md`) utiliser dans `./.prompt-hub/domain`
-- générer `./agents.md` en combinant `core/core.md` + le(s) domaine(s) sélectionné(s)
+The `install-prompt-hub.sh` script:
+- retrieves `prompt-library` content and copies it into `./.prompt-hub`
+- asks which domain file(s) (`.md`) to use from `./.prompt-hub/domain`
+- generates `./agents.md` by combining `core/core.md` with the selected domain file(s)
 
-### Prérequis
+### Requirements
 
 - `bash`
 - `curl`
 - `tar`
 
-### Exécution
+### Run
 
 ```bash
 chmod +x install-prompt-hub.sh
 ./install-prompt-hub.sh
 ```
 
-Ensuite, choisissez le fichier de domaine proposé dans la liste (ex: `app-development.md`).
+Then choose one or more domain files from the list (for example: `app-development.md`).
 
-### Résultat attendu
+### Expected Result
 
-- dossier local `./.prompt-hub` créé/mis à jour
-- fichier `./agents.md` créé à la racine
+- local `./.prompt-hub` directory created/updated
+- `./agents.md` file created at the root
 
-### Option (URL d'archive personnalisée)
+### Option (Custom Archive URL)
 
-Par défaut, le script utilise l'archive GitHub du repo principal.
-Vous pouvez surcharger l'URL :
+By default, the script uses the GitHub archive from the main repository.
+You can override the archive URL:
 
 ```bash
 PROMPT_HUB_ARCHIVE_URL="https://..." ./install-prompt-hub.sh

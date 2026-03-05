@@ -1,5 +1,9 @@
 # Releases
 
+## 0.1.2 - 2026-03-05
+
+- Functional evolution: translated `README.md` content from French to English while keeping the same structure and usage flow.
+
 ## 0.1.1 - 2026-03-05
 
 - Functional evolution: clarified in Quick Start that the install/update command must be run from the target directory.
