@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.0 - 2026-03-05
+
+- Functional evolution: initialized the `domain/market-watch` branch from `main` to start work on a dedicated Market Watch domain.
+
 ## 0.1.2 - 2026-03-05
 
 - Functional evolution: translated `README.md` content from French to English while keeping the same structure and usage flow.
