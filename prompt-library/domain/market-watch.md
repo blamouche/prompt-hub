@@ -38,10 +38,8 @@ Point d'entree unique contenant toutes les consignes des agents.
 - `list-add-agent`
 - `list-agent`
 - `month-synthesis-agent`
-- `monthly-substackpost-agent`
 - `newsletter-agent`
 - `stats-agent`
-- `substackpost-agent`
 - `weekly-recap-agent`
 
 ## Routage Market Watch
@@ -184,50 +182,6 @@ Synthese: https://url2
 - Avoid hyperbolic words.
 - ASCII filenames preferred.
 
-## Agent: monthly-substackpost-agent
-### Usage
-```bash
-/monthly-substackpost-agent YYYY-MM
-```
-
-### Consignes
-1. Get all articles for `YYYY-MM` from `$SRC_DIR/YYYY-MM/`.
-2. Analyze corpus: themes, patterns, narrative arc.
-3. Craft title in sentence case.
-4. Craft subtitle: compelling sentence <150 chars, italic.
-5. Write article (1500-2000 words) in English unless explicit user request:
-   - Opening hook (1-2 para)
-   - Big picture (2-3 para)
-   - Deep dive (4-6 para)
-   - Tensions/nuances (2-3 para)
-   - Looking ahead (1-2 para)
-6. Format:
-```markdown
-# [TITLE]
-
-*[Subtitle]*
-
-[Article body - no bullets in main text, 2-3 subheadings max]
-
----
-
-## Sources
-1. [Title](source-url)
-[list all articles from the month]
-```
-7. Save to `$MONTHLY_SUBSTACK_POST_TEMPLATE`.
-8. Copy to `$SUBSTACK_LATEST_FILE`.
-9. Commit and push:
-   - fetch/pull if behind
-   - commit message: `Add substack post YYYY-MM: [TITLE]`
-
-### Style
-- Confident editorial voice for intelligent non-technical readers.
-- Specific examples over abstract claims.
-- Clear narrative arc and stance.
-- Attribute insights to source articles.
-- Avoid cliches/superlatives.
-
 ## Agent: newsletter-agent
 ### Usage
 ```bash
@@ -317,51 +271,6 @@ Articles per month:
 ### Notes
 - Update existing Statistics section, do not duplicate.
 - Preserve links and content.
-
-## Agent: substackpost-agent
-### Usage
-```bash
-/substackpost-agent
-```
-
-### Consignes
-1. Get 15 most recent articles from `$README_FILE` section `## Articles`, read each file.
-2. Analyze corpus: themes, patterns, central insight.
-3. Craft title in sentence case.
-4. Craft subtitle: compelling sentence <150 chars, italic.
-5. Write article (1500-2000 words) in English unless explicit user request:
-   - Opening hook (1-2 para)
-   - Big picture (2-3 para)
-   - Deep dive (4-6 para)
-   - Tensions/nuances (2-3 para)
-   - Looking ahead (1-2 para)
-6. Format:
-```markdown
-# [TITLE]
-
-*[Subtitle]*
-
-[Article body - no bullets in main text, 2-3 subheadings max]
-
----
-
-## Sources
-1. [Title](source-url)
-[list all 15]
-```
-7. Save to `$SUBSTACK_POST_TEMPLATE`.
-8. Copy to `$SUBSTACK_LATEST_FILE`.
-9. Commit and push:
-   - fetch/pull if behind
-   - commit message: `Add substack post: [TITLE]`
-
-### Style
-- Confident editorial voice.
-- Specific examples.
-- Clear stance and narrative arc.
-- Attribute insights.
-- Avoid cliches and superlatives.
-- Quality over exhaustive coverage.
 
 ## Agent: weekly-recap-agent
 ### Usage

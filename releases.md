@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.3 - 2026-03-05
+
+- Functional evolution: removed `monthly-substackpost-agent` and `substackpost-agent` from `prompt-library/domain/market-watch.md`.
+
 ## 0.2.2 - 2026-03-05
 
 - Fix: commented all variable assignment lines in `prompt-library/domain/market-watch.md` section `Variables`.
