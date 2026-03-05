@@ -68,23 +68,42 @@ if [[ ${#domain_files[@]} -eq 0 ]]; then
 fi
 
 echo ""
-echo "Choose a domain file to use:"
+echo "Choose one or more domain files to use:"
 for i in "${!domain_files[@]}"; do
   printf "%d) %s\n" "$((i + 1))" "${domain_files[$i]}"
 done
 
 action_choice=""
+selected_indices=()
 while true; do
-  read -r -p "Enter choice [1-${#domain_files[@]}]: " action_choice
-  if [[ "$action_choice" =~ ^[0-9]+$ ]] && (( action_choice >= 1 && action_choice <= ${#domain_files[@]} )); then
+  read -r -p "Enter choice(s) [1-${#domain_files[@]}] (comma/space separated): " action_choice
+  selected_indices=()
+  is_valid=true
+  normalized_choice="${action_choice//,/ }"
+  for token in $normalized_choice; do
+    if [[ ! "$token" =~ ^[0-9]+$ ]] || (( token < 1 || token > ${#domain_files[@]} )); then
+      is_valid=false
+      break
+    fi
+    selected_indices+=("$token")
+  done
+
+  if [[ "$is_valid" == "true" && ${#selected_indices[@]} -gt 0 ]]; then
     break
   fi
-  echo "Invalid choice. Please enter a number between 1 and ${#domain_files[@]}."
+  echo "Invalid choice. Enter one or more numbers between 1 and ${#domain_files[@]}, separated by commas or spaces."
 done
 
-SELECTED_DOMAIN_FILE="${domain_files[$((action_choice - 1))]}"
 CORE_FILE="$TARGET_DIR/core/core.md"
-SELECTED_FILE_PATH="$DOMAIN_DIR/$SELECTED_DOMAIN_FILE"
+SELECTED_DOMAIN_FILES=()
+selected_domains_seen="|"
+for selected_index in "${selected_indices[@]}"; do
+  candidate_file="${domain_files[$((selected_index - 1))]}"
+  if [[ "$selected_domains_seen" != *"|$candidate_file|"* ]]; then
+    SELECTED_DOMAIN_FILES+=("$candidate_file")
+    selected_domains_seen="${selected_domains_seen}${candidate_file}|"
+  fi
+done
 
 if [[ ! -f "$CORE_FILE" ]]; then
   echo "Error: core file not found at $CORE_FILE." >&2
@@ -93,11 +112,22 @@ fi
 
 {
   cat "$CORE_FILE"
-  printf "\n\n"
-  cat "$SELECTED_FILE_PATH"
+  for selected_domain_file in "${SELECTED_DOMAIN_FILES[@]}"; do
+    printf "\n\n"
+    cat "$DOMAIN_DIR/$selected_domain_file"
+  done
   printf "\n"
 } > "$AGENT_FILE"
 
+selected_domains_display=""
+for selected_domain_file in "${SELECTED_DOMAIN_FILES[@]}"; do
+  if [[ -z "$selected_domains_display" ]]; then
+    selected_domains_display="$selected_domain_file"
+  else
+    selected_domains_display="$selected_domains_display, $selected_domain_file"
+  fi
+done
+
 echo ""
 echo "Created: $AGENT_FILE"
-echo "Using domain: $SELECTED_DOMAIN_FILE"
+echo "Using domains: $selected_domains_display"
