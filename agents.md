@@ -11,6 +11,23 @@ LIST_FILE="LIST.md"
 ```
 
 
+## Source: `./.prompt-hub/app/market-watch.md.bkp`
+
+# Market Watch App
+
+```bash
+LIST_FILE="LIST.md"
+```
+
+
+## Source: `./.prompt-hub/app/test perso.md`
+
+
+
+## Source: `./.prompt-hub/app/test perso.md.bkp`
+
+
+
 ## Source: `./.prompt-hub/core/core.md`
 
 # Core Prompt
