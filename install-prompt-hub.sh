@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_ARCHIVE_URL="${PROMPT_HUB_ARCHIVE_URL:-https://codeload.github.com/blamouche/prompt-hub/tar.gz/refs/heads/main}"
+REPO_OWNER_REPO="${PROMPT_HUB_REPO:-blamouche/prompt-hub}"
+REPO_REF="${PROMPT_HUB_REF:-main}"
+REPO_ARCHIVE_URL="${PROMPT_HUB_ARCHIVE_URL:-https://api.github.com/repos/${REPO_OWNER_REPO}/tarball/${REPO_REF}}"
+GITHUB_TOKEN="${PROMPT_HUB_GITHUB_TOKEN:-${GITHUB_TOKEN:-}}"
 TARGET_DIR="${PWD}/.prompt-hub"
 AGENT_FILE="${PWD}/agents.md"
 
@@ -13,8 +16,30 @@ trap cleanup EXIT
 
 SRC_DIR=""
 echo "Downloading prompt-library..."
-if curl -fsSL "$REPO_ARCHIVE_URL" | tar -xz -C "$TMP_DIR"; then
-  SRC_DIR="$(find "$TMP_DIR" -type d -path '*/prompt-library' | head -n 1)"
+download_failed=false
+if [[ -n "$GITHUB_TOKEN" ]]; then
+  if curl -fsSL \
+    -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+    -H "Accept: application/vnd.github+json" \
+    "$REPO_ARCHIVE_URL" | tar -xz -C "$TMP_DIR"; then
+    SRC_DIR="$(find "$TMP_DIR" -type d -path '*/prompt-library' | head -n 1)"
+  else
+    download_failed=true
+  fi
+else
+  if curl -fsSL "$REPO_ARCHIVE_URL" | tar -xz -C "$TMP_DIR"; then
+    SRC_DIR="$(find "$TMP_DIR" -type d -path '*/prompt-library' | head -n 1)"
+  else
+    download_failed=true
+  fi
+fi
+
+if [[ "$download_failed" == "true" && -z "$GITHUB_TOKEN" ]]; then
+  echo "Download failed. If the repository is private, set PROMPT_HUB_GITHUB_TOKEN (or GITHUB_TOKEN)." >&2
+fi
+
+if [[ "$download_failed" == "true" && -n "$GITHUB_TOKEN" ]]; then
+  echo "Download failed with provided token. Check token scope and repository access." >&2
 fi
 
 if [[ -z "${SRC_DIR}" || ! -d "${SRC_DIR}" ]]; then

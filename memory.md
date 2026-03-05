@@ -311,3 +311,11 @@
   commands_executed: rg -n substackpost, perl in-place replacement, rg -n verification, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push the substack-post-recents rename update.
+
+- date_time: 2026-03-05 21:23:41 CET
+  actor: agent
+  action_summary: Updated installer and README to support private repository installation via GitHub token authentication and configurable repo/ref.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: sed -n install-prompt-hub.sh, sed -n README.md, apply_patch, bash -n install-prompt-hub.sh, local installer fallback smoke test, date
+  outcome_status: success
+  next_relevant_step: Commit and push private-repo install support update.

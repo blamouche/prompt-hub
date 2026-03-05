@@ -1,5 +1,12 @@
 # Releases
 
+## 0.2.26 - 2026-03-05
+
+- Functional evolution: installer now supports private repository archive download through `PROMPT_HUB_GITHUB_TOKEN` (fallback to `GITHUB_TOKEN`).
+- Functional evolution: installer now supports configurable private repo/ref via `PROMPT_HUB_REPO` and `PROMPT_HUB_REF`.
+- Fix: installer now provides explicit auth guidance when archive download fails against private repositories.
+- Fix: README updated with private repository install/update commands using authenticated script download.
+
 ## 0.2.25 - 2026-03-05
 
 - Functional evolution: renamed Market Watch agent `substackpost` to `substack-post-recents`, including usage command `/substack-post-recents`.

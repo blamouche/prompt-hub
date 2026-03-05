@@ -4,10 +4,20 @@
 
 Run the command from the target directory (the directory where you want to generate `./.prompt-hub` and `./agents.md`):
 
+Set a GitHub token with access to the private repository:
+
+```bash
+export PROMPT_HUB_GITHUB_TOKEN="<your_github_token>"
+```
+
 ### Installation
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh)
+curl -fsSL \
+  -H "Authorization: Bearer ${PROMPT_HUB_GITHUB_TOKEN}" \
+  -o install-prompt-hub.sh \
+  https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh
+bash ./install-prompt-hub.sh
 ```
 
 ### Update
@@ -15,7 +25,11 @@ bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/in
 Run the exact same command again:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh)
+curl -fsSL \
+  -H "Authorization: Bearer ${PROMPT_HUB_GITHUB_TOKEN}" \
+  -o install-prompt-hub.sh \
+  https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh
+bash ./install-prompt-hub.sh
 ```
 
 ### Important
@@ -72,4 +86,13 @@ You can override the archive URL:
 
 ```bash
 PROMPT_HUB_ARCHIVE_URL="https://..." ./install-prompt-hub.sh
+```
+
+You can also override repository/ref and authentication:
+
+```bash
+PROMPT_HUB_GITHUB_TOKEN="<your_github_token>" \
+PROMPT_HUB_REPO="owner/private-repo" \
+PROMPT_HUB_REF="main" \
+./install-prompt-hub.sh
 ```
