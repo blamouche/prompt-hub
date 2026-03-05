@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.15 - 2026-03-05
+
+- Functional evolution: renamed Market Watch agent `article-synthesis-agent` to `article-synthesis`, including usage command and internal invocation reference.
+
 ## 0.2.14 - 2026-03-05
 
 - Functional evolution: renamed Market Watch agent `url-add` to `add-url`, including usage command `/add-url <url1> [url2] [url3] ...`.

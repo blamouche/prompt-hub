@@ -223,3 +223,11 @@
   commands_executed: rg -n url-add, apply_patch, rg -n verification, date
   outcome_status: success
   next_relevant_step: Commit and push the add-url rename update.
+
+- date_time: 2026-03-05 15:49:17 CET
+  actor: agent
+  action_summary: Renamed Market Watch agent article-synthesis-agent to article-synthesis in domain prompt (registry, usage, and internal call reference).
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: rg -n article-synthesis-agent, apply_patch, rg -n verification, date
+  outcome_status: success
+  next_relevant_step: Commit and push the article-synthesis rename update.

@@ -28,7 +28,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 ```
 
 ## Registre
-- `article-synthesis-agent`
+- `article-synthesis`
 - `add-url`
 - `list-agent`
 - `month-synthesis-agent`
@@ -41,10 +41,10 @@ Point d'entree unique contenant toutes les consignes des agents.
 3. Utiliser les variables de chemins/fichiers ci-dessus.
 4. Si l'agent est inconnu, retourner la liste du registre.
 
-## Agent: article-synthesis-agent
+## Agent: article-synthesis
 ### Usage
 ```bash
-/article-synthesis-agent <url>
+/article-synthesis <url>
 ```
 
 ### Consignes
@@ -116,7 +116,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 1. Open `$LIST_FILE` and note timestamp for batch recap.
 2. For each URL (top to bottom, ignore empty lines):
    - Nettoyer l'URL (retirer `utm_*`, `ref`, `fbclid`, `gclid`, `mc_cid`, `mc_eid`, etc.)
-   - Run `/article-synthesis-agent <url-nettoyee>`
+   - Run `/article-synthesis <url-nettoyee>`
    - Extract title and elevator pitch from created file
    - Remove processed URL from `$LIST_FILE`
    - Commit: `Process article: [Title]`
