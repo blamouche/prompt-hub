@@ -7,25 +7,17 @@ Merged prompt content from app, core, and selected domain file(s).
 # Market Watch App
 
 ```bash
-LIST_FILE="LIST.md"
+LIST_FILE="LIST2.md"
 ```
 
 
-## Source: `./.prompt-hub/app/market-watch.md.bkp`
+## Source: `./.prompt-hub/app/market-watch.md.sample`
 
 # Market Watch App
 
 ```bash
 LIST_FILE="LIST.md"
 ```
-
-
-## Source: `./.prompt-hub/app/test perso.md`
-
-
-
-## Source: `./.prompt-hub/app/test perso.md.bkp`
-
 
 
 ## Source: `./.prompt-hub/core/core.md`
@@ -186,7 +178,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 
 ## Registre
 - `article-synthesis-agent`
-- `url-add`
+- `add-url`
 - `list-agent`
 - `month-synthesis-agent`
 - `stats-agent`
@@ -235,10 +227,10 @@ Point d'entree unique contenant toutes les consignes des agents.
 - Maintain chronological order (newest first).
 - Synthesis should be objective.
 
-## Agent: url-add
+## Agent: add-url
 ### Usage
 ```bash
-/url-add <url1> [url2] [url3] ...
+/add-url <url1> [url2] [url3] ...
 ```
 
 ### Consignes
@@ -395,5 +387,4 @@ Articles per month:
 - Original summaries only.
 - Skip unparseable dates with warning.
 - Report if no matching articles.
-
 

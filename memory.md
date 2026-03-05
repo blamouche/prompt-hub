@@ -215,3 +215,11 @@
   commands_executed: nl -ba install-prompt-hub.sh, nl -ba README.md, apply_patch, bash -n install-prompt-hub.sh, local sample-only installer smoke test, date
   outcome_status: success
   next_relevant_step: Commit and push the app .sample replacement behavior update.
+
+- date_time: 2026-03-05 15:28:36 CET
+  actor: agent
+  action_summary: Renamed Market Watch agent url-add to add-url in source domain prompt and generated agents.md.
+  files_changed: prompt-library/domain/market-watch.md, agents.md, version.md, releases.md, memory.md
+  commands_executed: rg -n url-add, apply_patch, rg -n verification, date
+  outcome_status: success
+  next_relevant_step: Commit and push the add-url rename update.

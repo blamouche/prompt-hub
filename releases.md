@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.14 - 2026-03-05
+
+- Functional evolution: renamed Market Watch agent `url-add` to `add-url`, including usage command `/add-url <url1> [url2] [url3] ...`.
+
 ## 0.2.13 - 2026-03-05
 
 - Functional evolution: installer now updates `./.prompt-hub/app` by replacing only files ending with `.sample`.
