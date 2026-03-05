@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.8 - 2026-03-05
+
+- Functional evolution: added a new root HTML test page `test.html`.
+
 ## 0.2.7 - 2026-03-05
 
 - Functional evolution: installer now generates `agents.md` by merging the full content of local files from `./.prompt-hub/app`, `./.prompt-hub/core`, and selected domain files in `./.prompt-hub/domain`.
