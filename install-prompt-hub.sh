@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_ARCHIVE_URL="${PROMPT_HUB_ARCHIVE_URL:-https://codeload.github.com/blamouche/prompt-hub/tar.gz/refs/heads/main}"
 TARGET_DIR="${PWD}/.prompt-hub"
-AGENT_FILE="${PWD}/agent.md"
+AGENT_FILE="${PWD}/agents.md"
 
 TMP_DIR="$(mktemp -d)"
 cleanup() {
