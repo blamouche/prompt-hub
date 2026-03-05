@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.18 - 2026-03-05
+
+- Functional evolution: renamed Market Watch agent `stats-agent` to `update-stats`, including usage command `/update-stats` and internal invocation references.
+
 ## 0.2.17 - 2026-03-05
 
 - Functional evolution: renamed Market Watch agent `month-synthesis-agent` to `monthly-synthesis`, including usage command `/monthly-synthesis <YYYY-MM>`.

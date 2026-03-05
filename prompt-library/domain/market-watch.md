@@ -32,7 +32,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 - `add-url`
 - `scan-list`
 - `monthly-synthesis`
-- `stats-agent`
+- `update-stats`
 - `weekly-recap-agent`
 
 ## Routage Market Watch
@@ -68,7 +68,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 [500-word synthesis: main arguments, insights, conclusions]
 ```
 4. Update `$README_FILE`: add link under `## Articles > ### YYYY > #### Month` (newest first).
-5. Run `/stats-agent` to update statistics.
+5. Run `/update-stats` to update statistics.
 6. Commit and push:
    - `git fetch origin && git pull --rebase origin <branch>` if behind
    - Commit message: `Add synthesis: [Title]`
@@ -175,10 +175,10 @@ Synthese: https://url2
 - Avoid hyperbolic words.
 - ASCII filenames preferred.
 
-## Agent: stats-agent
+## Agent: update-stats
 ### Usage
 ```bash
-/stats-agent
+/update-stats
 ```
 
 ### Consignes

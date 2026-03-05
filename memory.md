@@ -247,3 +247,11 @@
   commands_executed: rg -n month-synthesis-agent, perl in-place replacement, rg -n verification, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push the monthly-synthesis rename update.
+
+- date_time: 2026-03-05 16:04:17 CET
+  actor: agent
+  action_summary: Renamed Market Watch agent stats-agent to update-stats in source domain prompt and generated agents.md, including command references.
+  files_changed: prompt-library/domain/market-watch.md, agents.md, version.md, releases.md, memory.md
+  commands_executed: rg -n stats-agent, perl in-place replacement, rg -n verification, apply_patch, date
+  outcome_status: success
+  next_relevant_step: Commit and push the update-stats rename update.
