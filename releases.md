@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.4 - 2026-03-05
+
+- Functional evolution: removed `newsletter-agent` from `prompt-library/domain/market-watch.md`.
+
 ## 0.2.3 - 2026-03-05
 
 - Functional evolution: removed `monthly-substackpost-agent` and `substackpost-agent` from `prompt-library/domain/market-watch.md`.
