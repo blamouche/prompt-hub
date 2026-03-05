@@ -263,3 +263,11 @@
   commands_executed: rg -n weekly-recap-agent, perl in-place replacement, rg -n verification, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push the weekly-recap rename update.
+
+- date_time: 2026-03-05 16:40:22 CET
+  actor: agent
+  action_summary: Removed Variables section from Market Watch domain prompt and hardcoded path/file references directly in instructions.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: nl -ba prompt-library/domain/market-watch.md, rg -n variable references, apply_patch, date
+  outcome_status: success
+  next_relevant_step: Commit and push the hardcoded path/file update.

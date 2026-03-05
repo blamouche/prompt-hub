@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.20 - 2026-03-05
+
+- Functional evolution: in `prompt-library/domain/market-watch.md`, removed the Variables section and inlined all previously variable-based paths/files directly in agent instructions.
+
 ## 0.2.19 - 2026-03-05
 
 - Functional evolution: renamed Market Watch agent `weekly-recap-agent` to `weekly-recap`, including usage command `/weekly-recap <theme>`.
