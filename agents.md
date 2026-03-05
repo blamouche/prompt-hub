@@ -182,7 +182,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 - `scan-list`
 - `monthly-synthesis`
 - `update-stats`
-- `weekly-recap-agent`
+- `weekly-recap`
 
 ## Routage Market Watch
 1. Verifier que `<agent>` existe dans le registre.
@@ -354,10 +354,10 @@ Articles per month:
 - Update existing Statistics section, do not duplicate.
 - Preserve links and content.
 
-## Agent: weekly-recap-agent
+## Agent: weekly-recap
 ### Usage
 ```bash
-/weekly-recap-agent <theme>
+/weekly-recap <theme>
 ```
 
 ### Consignes

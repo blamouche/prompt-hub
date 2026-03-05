@@ -255,3 +255,11 @@
   commands_executed: rg -n stats-agent, perl in-place replacement, rg -n verification, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push the update-stats rename update.
+
+- date_time: 2026-03-05 16:05:53 CET
+  actor: agent
+  action_summary: Renamed Market Watch agent weekly-recap-agent to weekly-recap in source domain prompt and generated agents.md.
+  files_changed: prompt-library/domain/market-watch.md, agents.md, version.md, releases.md, memory.md
+  commands_executed: rg -n weekly-recap-agent, perl in-place replacement, rg -n verification, apply_patch, date
+  outcome_status: success
+  next_relevant_step: Commit and push the weekly-recap rename update.

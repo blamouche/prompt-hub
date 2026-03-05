@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.19 - 2026-03-05
+
+- Functional evolution: renamed Market Watch agent `weekly-recap-agent` to `weekly-recap`, including usage command `/weekly-recap <theme>`.
+
 ## 0.2.18 - 2026-03-05
 
 - Functional evolution: renamed Market Watch agent `stats-agent` to `update-stats`, including usage command `/update-stats` and internal invocation references.
