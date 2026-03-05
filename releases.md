@@ -1,5 +1,10 @@
 # Releases
 
+## 0.2.6 - 2026-03-05
+
+- Functional evolution: changed installer output so `agents.md` now references selected core/domain prompt files instead of embedding full prompt contents.
+- Fix: updated README installer behavior description to match reference-based `agents.md` generation.
+
 ## 0.2.5 - 2026-03-05
 
 - Fix: removed Substack and Newsletter variables from `prompt-library/domain/market-watch.md`.

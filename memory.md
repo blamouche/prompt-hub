@@ -127,3 +127,11 @@
   commands_executed: apply_patch
   outcome_status: success
   next_relevant_step: Stage, commit, and push the variable cleanup update.
+
+- date_time: 2026-03-05 14:37:19 CET
+  actor: agent
+  action_summary: Updated installer to generate agents.md with references to core/domain selected prompts instead of merged prompt content, and aligned README behavior description.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch, bash -n install-prompt-hub.sh, printf '1\n' | bash ./install-prompt-hub.sh (in temp directory)
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push installer behavior update.
