@@ -1,5 +1,11 @@
 # Releases
 
+## 0.2.11 - 2026-03-05
+
+- Functional evolution: installer now creates `.bkp` backups for existing files in `./.prompt-hub/app` before copying new app files.
+- Functional evolution: installer now warns the user when backup files (`*.bkp`) are present in `./.prompt-hub/app`.
+- Fix: updated README to document app backup and warning behavior during install/update.
+
 ## 0.2.10 - 2026-03-05
 
 - Functional evolution: renamed Market Watch agent `list-add-agent` to `url-add`, including its usage command `/url-add <url1> [url2] [url3] ...`.

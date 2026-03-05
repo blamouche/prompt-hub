@@ -44,9 +44,21 @@ done
 
 SRC_APP_DIR="$SRC_DIR/app"
 TARGET_APP_DIR="$TARGET_DIR/app"
+app_backup_created="false"
 if [[ -d "$SRC_APP_DIR" ]]; then
   mkdir -p "$TARGET_APP_DIR"
+  while IFS= read -r existing_app_file; do
+    cp "$existing_app_file" "${existing_app_file}.bkp"
+    app_backup_created="true"
+  done < <(find "$TARGET_APP_DIR" -type f ! -name '*.bkp' | sort)
   cp -R "$SRC_APP_DIR"/. "$TARGET_APP_DIR"/
+fi
+
+app_backup_files=()
+if [[ -d "$TARGET_APP_DIR" ]]; then
+  while IFS= read -r backup_file; do
+    app_backup_files+=("$backup_file")
+  done < <(find "$TARGET_APP_DIR" -type f -name '*.bkp' | sort)
 fi
 
 echo "Installed prompt library into: $TARGET_DIR"
@@ -169,3 +181,13 @@ echo ""
 echo "Created: $AGENT_FILE"
 echo "Using domains: $selected_domains_display"
 echo "Removed unselected domain files from: $DOMAIN_DIR"
+if [[ ${#app_backup_files[@]} -gt 0 ]]; then
+  echo ""
+  echo "Warning: backup file(s) detected in $TARGET_APP_DIR:"
+  for backup_file in "${app_backup_files[@]}"; do
+    echo " - $backup_file"
+  done
+  if [[ "$app_backup_created" == "true" ]]; then
+    echo "New backups were created before copying app updates."
+  fi
+fi

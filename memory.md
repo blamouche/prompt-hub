@@ -191,3 +191,11 @@
   commands_executed: rg -n list-add-agent, apply_patch, rg -n verification, date
   outcome_status: success
   next_relevant_step: Commit and push the agent rename update.
+
+- date_time: 2026-03-05 15:09:26 CET
+  actor: agent
+  action_summary: Added app-file backup behavior during installer updates (.bkp), added warning when backups exist, and aligned README/versioning.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: nl -ba install-prompt-hub.sh, apply_patch, bash -n install-prompt-hub.sh, local installer backup smoke test, date
+  outcome_status: success
+  next_relevant_step: Commit and push installer backup behavior update.
