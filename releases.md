@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.17 - 2026-03-05
+
+- Functional evolution: renamed Market Watch agent `month-synthesis-agent` to `monthly-synthesis`, including usage command `/monthly-synthesis <YYYY-MM>`.
+
 ## 0.2.16 - 2026-03-05
 
 - Functional evolution: renamed Market Watch agent `list-agent` to `scan-list`, including usage command `/scan-list`.

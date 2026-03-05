@@ -180,7 +180,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 - `article-synthesis-agent`
 - `add-url`
 - `scan-list`
-- `month-synthesis-agent`
+- `monthly-synthesis`
 - `stats-agent`
 - `weekly-recap-agent`
 
@@ -292,10 +292,10 @@ Synthese: https://url2
 - `$LIST_FILE` must be empty when complete.
 - Use 24h format `HHmmss` for filename.
 
-## Agent: month-synthesis-agent
+## Agent: monthly-synthesis
 ### Usage
 ```bash
-/month-synthesis-agent <YYYY-MM>
+/monthly-synthesis <YYYY-MM>
 ```
 
 ### Consignes

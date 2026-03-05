@@ -239,3 +239,11 @@
   commands_executed: rg -n list-agent, perl in-place replacement, rg -n verification, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push the scan-list rename update.
+
+- date_time: 2026-03-05 15:59:47 CET
+  actor: agent
+  action_summary: Renamed Market Watch agent month-synthesis-agent to monthly-synthesis in source domain prompt and generated agents.md.
+  files_changed: prompt-library/domain/market-watch.md, agents.md, version.md, releases.md, memory.md
+  commands_executed: rg -n month-synthesis-agent, perl in-place replacement, rg -n verification, apply_patch, date
+  outcome_status: success
+  next_relevant_step: Commit and push the monthly-synthesis rename update.
