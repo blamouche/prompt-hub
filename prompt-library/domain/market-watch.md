@@ -15,7 +15,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 - `substack-post-monthly`
 - `newsletter`
 - `update-stats`
-- `substackpost`
+- `substack-post-recents`
 - `weekly-recap`
 
 ## Routage Market Watch
@@ -262,10 +262,10 @@ This newsletter explains, step by step, the foundations of modern cartography: d
 - English, factual editorial tone.
 - Focus on engineering and future of work.
 
-## Agent: substackpost
+## Agent: substack-post-recents
 ### Usage
 ```bash
-/substackpost
+/substack-post-recents
 ```
 
 ### Consignes

@@ -303,3 +303,11 @@
   commands_executed: rg -n monthly-substackpost, perl in-place replacement, rg -n verification, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push the substack-post-monthly rename update.
+
+- date_time: 2026-03-05 17:34:19 CET
+  actor: agent
+  action_summary: Renamed substackpost agent to substack-post-recents in Market Watch prompts.
+  files_changed: prompt-library/domain/market-watch.md, agents.md, version.md, releases.md, memory.md
+  commands_executed: rg -n substackpost, perl in-place replacement, rg -n verification, apply_patch, date
+  outcome_status: success
+  next_relevant_step: Commit and push the substack-post-recents rename update.

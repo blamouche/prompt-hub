@@ -390,10 +390,10 @@ This newsletter explains, step by step, the foundations of modern cartography: d
 - English, factual editorial tone.
 - Focus on engineering and future of work.
 
-## Agent: substackpost
+## Agent: substack-post-recents
 ### Usage
 ```bash
-/substackpost
+/substack-post-recents
 ```
 
 ### Consignes

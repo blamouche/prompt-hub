@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.25 - 2026-03-05
+
+- Functional evolution: renamed Market Watch agent `substackpost` to `substack-post-recents`, including usage command `/substack-post-recents`.
+
 ## 0.2.24 - 2026-03-05
 
 - Functional evolution: renamed Market Watch agent `monthly-substackpost` to `substack-post-monthly`, including usage command `/substack-post-monthly YYYY-MM`.
