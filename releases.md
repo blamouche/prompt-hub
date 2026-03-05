@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.2 - 2026-03-05
+
+- Fix: commented all variable assignment lines in `prompt-library/domain/market-watch.md` section `Variables`.
+
 ## 0.2.1 - 2026-03-05
 
 - Fix: replaced remaining "Agent Global" references with "Market Watch" in `prompt-library/domain/market-watch.md`.
