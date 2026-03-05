@@ -30,7 +30,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 ## Registre
 - `article-synthesis`
 - `add-url`
-- `list-agent`
+- `scan-list`
 - `month-synthesis-agent`
 - `stats-agent`
 - `weekly-recap-agent`
@@ -106,10 +106,10 @@ Point d'entree unique contenant toutes les consignes des agents.
 - Avoid fragile shell escaping with URLs.
 - Keep `$LIST_FILE` plain text, one URL per line.
 
-## Agent: list-agent
+## Agent: scan-list
 ### Usage
 ```bash
-/list-agent
+/scan-list
 ```
 
 ### Consignes

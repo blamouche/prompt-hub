@@ -231,3 +231,11 @@
   commands_executed: rg -n article-synthesis-agent, apply_patch, rg -n verification, date
   outcome_status: success
   next_relevant_step: Commit and push the article-synthesis rename update.
+
+- date_time: 2026-03-05 15:53:11 CET
+  actor: agent
+  action_summary: Renamed Market Watch agent list-agent to scan-list in source domain prompt and generated agents.md.
+  files_changed: prompt-library/domain/market-watch.md, agents.md, version.md, releases.md, memory.md
+  commands_executed: rg -n list-agent, perl in-place replacement, rg -n verification, apply_patch, date
+  outcome_status: success
+  next_relevant_step: Commit and push the scan-list rename update.
