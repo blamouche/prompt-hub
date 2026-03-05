@@ -4,7 +4,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 
 ## Usage
 ```bash
-/market-watch <agent> [arguments]
+/agents <agent> [arguments]
 ```
 
 ## Variables
@@ -29,7 +29,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 
 ## Registre
 - `article-synthesis-agent`
-- `list-add-agent`
+- `url-add`
 - `list-agent`
 - `month-synthesis-agent`
 - `stats-agent`
@@ -78,10 +78,10 @@ Point d'entree unique contenant toutes les consignes des agents.
 - Maintain chronological order (newest first).
 - Synthesis should be objective.
 
-## Agent: list-add-agent
+## Agent: url-add
 ### Usage
 ```bash
-/list-add-agent <url1> [url2] [url3] ...
+/url-add <url1> [url2] [url3] ...
 ```
 
 ### Consignes
