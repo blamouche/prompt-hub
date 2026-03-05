@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.9 - 2026-03-05
+
+- Fix: updated Market Watch entry command in usage from `/market-watch <agent> [arguments]` to `/agents <agent> [arguments]`.
+
 ## 0.2.8 - 2026-03-05
 
 - Functional evolution: added a new root HTML test page `test.html`.

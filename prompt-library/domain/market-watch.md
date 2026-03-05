@@ -4,7 +4,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 
 ## Usage
 ```bash
-/market-watch <agent> [arguments]
+/agents <agent> [arguments]
 ```
 
 ## Variables

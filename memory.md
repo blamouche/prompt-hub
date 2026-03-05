@@ -175,3 +175,11 @@
   commands_executed: cat > test.html, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push the new test HTML page.
+
+- date_time: 2026-03-05 15:00:07 CET
+  actor: agent
+  action_summary: Updated Market Watch usage command from /market-watch to /agents and updated version/release tracking.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch, date
+  outcome_status: success
+  next_relevant_step: Commit and push the Market Watch command update.
