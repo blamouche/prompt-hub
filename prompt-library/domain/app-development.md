@@ -42,6 +42,7 @@ Use this prompt for software application development tasks across web, mobile, b
 - `0.X.0` is created automatically when a new branch is created.
 - `0.0.X` is incremented on every commit.
 - Each meaningful agent development action must result in a commit.
+- After each commit, push the commit to the remote branch.
 - Commit messages should be clear, scoped, and reflect the actual change.
 
 ## Documentation and Traceability
