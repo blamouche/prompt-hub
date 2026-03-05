@@ -1,5 +1,9 @@
 # Releases
 
+## 0.1.1 - 2026-03-05
+
+- Functional evolution: clarified in Quick Start that the install/update command must be run from the target directory.
+
 ## 0.1.0 - 2026-03-05
 
 - Functional evolution: added a Quick Start section at the top of `README.md` with install and update commands.

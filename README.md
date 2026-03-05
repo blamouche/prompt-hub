@@ -2,6 +2,8 @@
 
 ## Quick Start
 
+Depuis le dossier cible (le dossier ou vous voulez generer `./.prompt-hub` et `./agents.md`) :
+
 ### Installation
 
 ```bash
