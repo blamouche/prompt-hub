@@ -87,3 +87,11 @@
   commands_executed: git checkout -b domain/market-watch, apply_patch
   outcome_status: success
   next_relevant_step: Stage, commit, and push branch initialization metadata.
+
+- date_time: 2026-03-05 14:29:28 CET
+  actor: agent
+  action_summary: Replaced "Agent Global" naming with "Market Watch" in the market-watch domain prompt and updated traceability/version files.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the Market Watch wording update.

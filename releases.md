@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.1 - 2026-03-05
+
+- Fix: replaced remaining "Agent Global" references with "Market Watch" in `prompt-library/domain/market-watch.md`.
+
 ## 0.2.0 - 2026-03-05
 
 - Functional evolution: initialized the `domain/market-watch` branch from `main` to start work on a dedicated Market Watch domain.

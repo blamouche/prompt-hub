@@ -1,10 +1,10 @@
-# Agent Global
+# Market Watch
 
 Point d'entree unique contenant toutes les consignes des agents.
 
 ## Usage
 ```bash
-/agent-global <agent> [arguments]
+/market-watch <agent> [arguments]
 ```
 
 ## Variables
@@ -44,7 +44,7 @@ NEWSLETTER_TEMPLATE="$NEWSLETTER_DIR/YYYY-MM.md"
 - `substackpost-agent`
 - `weekly-recap-agent`
 
-## Routage global
+## Routage Market Watch
 1. Verifier que `<agent>` existe dans le registre.
 2. Appliquer uniquement la section de consignes correspondante.
 3. Utiliser les variables de chemins/fichiers ci-dessus.
