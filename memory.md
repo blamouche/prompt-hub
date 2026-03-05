@@ -55,3 +55,27 @@
   commands_executed: apply_patch
   outcome_status: success
   next_relevant_step: Stage, commit, and push domain creation updates.
+
+- date_time: 2026-03-05 13:50:23 CET
+  actor: agent
+  action_summary: Created a documentation branch and reinforced README with Quick Start install/update and .prompt-hub overwrite warning; aligned generated filename references and updated release/version metadata.
+  files_changed: README.md, releases.md, version.md, memory.md
+  commands_executed: git checkout -b docs/quick-start-update, apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the documentation updates branch.
+
+- date_time: 2026-03-05 13:53:17 CET
+  actor: agent
+  action_summary: Clarified in Quick Start that install/update must be run from the target directory, then updated release and version tracking.
+  files_changed: README.md, releases.md, version.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the documentation clarification.
+
+- date_time: 2026-03-05 13:54:20 CET
+  actor: agent
+  action_summary: Translated README documentation from French to English and updated release/version tracking.
+  files_changed: README.md, releases.md, version.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the README translation update.
