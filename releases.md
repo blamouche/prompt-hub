@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.5 - 2026-03-05
+
+- Fix: removed Substack and Newsletter variables from `prompt-library/domain/market-watch.md`.
+
 ## 0.2.4 - 2026-03-05
 
 - Functional evolution: removed `newsletter-agent` from `prompt-library/domain/market-watch.md`.

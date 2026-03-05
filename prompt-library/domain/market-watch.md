@@ -14,23 +14,17 @@ Point d'entree unique contenant toutes les consignes des agents.
 # AGENTS_DIR="agents"
 # SRC_DIR="src"
 # SYNTHESIS_DIR="synthesis"
-# SUBSTACK_DIR="substack"
-# NEWSLETTER_DIR="newsletter"
 # RECAP_DIR="recap"
 
 # Fichiers
 # README_FILE="README.md"
 # LIST_FILE="LIST.md"
-# SUBSTACK_LATEST_FILE="$SUBSTACK_DIR/latest.md"
 
 # Patterns / templates
 # ARTICLE_FILE_TEMPLATE="$SRC_DIR/YYYY-MM/YYYYMMDD-<title-slug>.md"
 # MONTH_SYNTHESIS_TEMPLATE="$SYNTHESIS_DIR/YYYY-MM.md"
 # BATCH_RECAP_TEMPLATE="$SYNTHESIS_DIR/YYYY-MM-DD - HHmmss - batch recap.md"
 # WEEKLY_RECAP_TEMPLATE="$RECAP_DIR/YYYY-MM-DD-<theme-slug>.md"
-# SUBSTACK_POST_TEMPLATE="$SUBSTACK_DIR/YYYYMMDD-post-<slug>.md"
-# MONTHLY_SUBSTACK_POST_TEMPLATE="$SUBSTACK_DIR/YYYYMMDD-post-<slug>.md"
-# NEWSLETTER_TEMPLATE="$NEWSLETTER_DIR/YYYY-MM.md"
 ```
 
 ## Registre

@@ -119,3 +119,11 @@
   commands_executed: apply_patch
   outcome_status: success
   next_relevant_step: Stage, commit, and push the newsletter agent removal.
+
+- date_time: 2026-03-05 14:34:12 CET
+  actor: agent
+  action_summary: Removed Substack and Newsletter variable lines from the Market Watch variables block and updated versioning traceability files.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the variable cleanup update.
