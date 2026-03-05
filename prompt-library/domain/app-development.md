@@ -41,6 +41,8 @@ Use this prompt for software application development tasks across web, mobile, b
 - `X.0.0` is created only on explicit user request.
 - `0.X.0` is created automatically when a new branch is created.
 - `0.0.X` is incremented on every commit.
+- Maintain a changelog file named `releases.md`; create it if it does not exist.
+- For each version in `releases.md`, list the functional evolutions and/or fixes delivered.
 - Each meaningful agent development action must result in a commit.
 - After each commit, push the commit to the remote branch.
 - Commit messages should be clear, scoped, and reflect the actual change.

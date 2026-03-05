@@ -31,3 +31,11 @@
   commands_executed: apply_patch, bash -n install-prompt-hub.sh, printf '1 2\n' | PROMPT_HUB_ARCHIVE_URL='http://127.0.0.1:9/nope' bash install-prompt-hub.sh
   outcome_status: success
   next_relevant_step: Stage, commit, and push the installer and prompt-library updates.
+
+- date_time: 2026-03-05 13:38:22 CET
+  actor: agent
+  action_summary: Updated app-development prompt to require creating and maintaining releases.md entries per version, then bumped patch version.
+  files_changed: prompt-library/domain/app-development.md, version.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push prompt and versioning updates.
