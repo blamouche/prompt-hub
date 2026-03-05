@@ -2,16 +2,31 @@
 
 Merged prompt content from app, core, and selected domain file(s).
 
-## Source: `./.prompt-hub/app/market-watch.md`
+## Source: `./.prompt-hub/app/market-watch.md.sample`
 
 # Market Watch App
 
 ```bash
-LIST_FILE="LIST2.md"
+# Dossiers
+ROOT_DIR="."
+AGENTS_DIR="agents"
+SRC_DIR="src"
+SYNTHESIS_DIR="synthesis"
+RECAP_DIR="recap"
+
+# Fichiers
+README_FILE="README.md"
+LIST_FILE="LIST.md"
+
+# Patterns / templates
+ARTICLE_FILE_TEMPLATE="$SRC_DIR/YYYY-MM/YYYYMMDD-<title-slug>.md"
+MONTH_SYNTHESIS_TEMPLATE="$SYNTHESIS_DIR/YYYY-MM.md"
+BATCH_RECAP_TEMPLATE="$SYNTHESIS_DIR/YYYY-MM-DD - HHmmss - batch recap.md"
+WEEKLY_RECAP_TEMPLATE="$RECAP_DIR/YYYY-MM-DD-<theme-slug>.md"
 ```
 
 
-## Source: `./.prompt-hub/app/market-watch.md.sample`
+## Source: `./.prompt-hub/app/market-watch.md.sample.bkp`
 
 # Market Watch App
 
@@ -177,7 +192,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 ```
 
 ## Registre
-- `article-synthesis-agent`
+- `article-synthesis`
 - `add-url`
 - `scan-list`
 - `monthly-synthesis`
@@ -190,10 +205,10 @@ Point d'entree unique contenant toutes les consignes des agents.
 3. Utiliser les variables de chemins/fichiers ci-dessus.
 4. Si l'agent est inconnu, retourner la liste du registre.
 
-## Agent: article-synthesis-agent
+## Agent: article-synthesis
 ### Usage
 ```bash
-/article-synthesis-agent <url>
+/article-synthesis <url>
 ```
 
 ### Consignes
@@ -265,7 +280,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 1. Open `$LIST_FILE` and note timestamp for batch recap.
 2. For each URL (top to bottom, ignore empty lines):
    - Nettoyer l'URL (retirer `utm_*`, `ref`, `fbclid`, `gclid`, `mc_cid`, `mc_eid`, etc.)
-   - Run `/article-synthesis-agent <url-nettoyee>`
+   - Run `/article-synthesis <url-nettoyee>`
    - Extract title and elevator pitch from created file
    - Remove processed URL from `$LIST_FILE`
    - Commit: `Process article: [Title]`
@@ -387,4 +402,5 @@ Articles per month:
 - Original summaries only.
 - Skip unparseable dates with warning.
 - Report if no matching articles.
+
 

@@ -28,12 +28,12 @@ Point d'entree unique contenant toutes les consignes des agents.
 ```
 
 ## Registre
-- `article-synthesis-agent`
-- `url-add`
-- `list-agent`
-- `month-synthesis-agent`
-- `stats-agent`
-- `weekly-recap-agent`
+- `article-synthesis`
+- `add-url`
+- `scan-list`
+- `monthly-synthesis`
+- `update-stats`
+- `weekly-recap`
 
 ## Routage Market Watch
 1. Verifier que `<agent>` existe dans le registre.
@@ -41,10 +41,10 @@ Point d'entree unique contenant toutes les consignes des agents.
 3. Utiliser les variables de chemins/fichiers ci-dessus.
 4. Si l'agent est inconnu, retourner la liste du registre.
 
-## Agent: article-synthesis-agent
+## Agent: article-synthesis
 ### Usage
 ```bash
-/article-synthesis-agent <url>
+/article-synthesis <url>
 ```
 
 ### Consignes
@@ -68,7 +68,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 [500-word synthesis: main arguments, insights, conclusions]
 ```
 4. Update `$README_FILE`: add link under `## Articles > ### YYYY > #### Month` (newest first).
-5. Run `/stats-agent` to update statistics.
+5. Run `/update-stats` to update statistics.
 6. Commit and push:
    - `git fetch origin && git pull --rebase origin <branch>` if behind
    - Commit message: `Add synthesis: [Title]`
@@ -78,10 +78,10 @@ Point d'entree unique contenant toutes les consignes des agents.
 - Maintain chronological order (newest first).
 - Synthesis should be objective.
 
-## Agent: url-add
+## Agent: add-url
 ### Usage
 ```bash
-/url-add <url1> [url2] [url3] ...
+/add-url <url1> [url2] [url3] ...
 ```
 
 ### Consignes
@@ -106,17 +106,17 @@ Point d'entree unique contenant toutes les consignes des agents.
 - Avoid fragile shell escaping with URLs.
 - Keep `$LIST_FILE` plain text, one URL per line.
 
-## Agent: list-agent
+## Agent: scan-list
 ### Usage
 ```bash
-/list-agent
+/scan-list
 ```
 
 ### Consignes
 1. Open `$LIST_FILE` and note timestamp for batch recap.
 2. For each URL (top to bottom, ignore empty lines):
    - Nettoyer l'URL (retirer `utm_*`, `ref`, `fbclid`, `gclid`, `mc_cid`, `mc_eid`, etc.)
-   - Run `/article-synthesis-agent <url-nettoyee>`
+   - Run `/article-synthesis <url-nettoyee>`
    - Extract title and elevator pitch from created file
    - Remove processed URL from `$LIST_FILE`
    - Commit: `Process article: [Title]`
@@ -143,10 +143,10 @@ Synthese: https://url2
 - `$LIST_FILE` must be empty when complete.
 - Use 24h format `HHmmss` for filename.
 
-## Agent: month-synthesis-agent
+## Agent: monthly-synthesis
 ### Usage
 ```bash
-/month-synthesis-agent <YYYY-MM>
+/monthly-synthesis <YYYY-MM>
 ```
 
 ### Consignes
@@ -175,10 +175,10 @@ Synthese: https://url2
 - Avoid hyperbolic words.
 - ASCII filenames preferred.
 
-## Agent: stats-agent
+## Agent: update-stats
 ### Usage
 ```bash
-/stats-agent
+/update-stats
 ```
 
 ### Consignes
@@ -205,10 +205,10 @@ Articles per month:
 - Update existing Statistics section, do not duplicate.
 - Preserve links and content.
 
-## Agent: weekly-recap-agent
+## Agent: weekly-recap
 ### Usage
 ```bash
-/weekly-recap-agent <theme>
+/weekly-recap <theme>
 ```
 
 ### Consignes
