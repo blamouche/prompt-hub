@@ -158,6 +158,155 @@ Synthese: https://url2
 - Avoid hyperbolic words.
 - ASCII filenames preferred.
 
+## Agent: monthly-substackpost
+### Usage
+```bash
+/monthly-substackpost YYYY-MM
+```
+
+### Consignes
+1. Get all articles for `YYYY-MM` from `src/YYYY-MM/`.
+2. Analyze corpus: themes, patterns, narrative arc.
+3. Craft title in sentence case.
+4. Craft subtitle: compelling sentence <150 chars, italic.
+5. Write article (1500-2000 words) in English unless explicit user request:
+   - Opening hook (1-2 para)
+   - Big picture (2-3 para)
+   - Deep dive (4-6 para)
+   - Tensions/nuances (2-3 para)
+   - Looking ahead (1-2 para)
+6. Format:
+```markdown
+# [TITLE]
+
+*[Subtitle]*
+
+[Article body - no bullets in main text, 2-3 subheadings max]
+
+---
+
+## Sources
+1. [Title](source-url)
+[list all articles from the month]
+```
+7. Save to `substack/YYYYMMDD-post-<slug>.md`.
+8. Copy to `substack/latest.md`.
+9. Commit and push:
+   - fetch/pull if behind
+   - commit message: `Add substack post YYYY-MM: [TITLE]`
+
+### Style
+- Confident editorial voice for intelligent non-technical readers.
+- Specific examples over abstract claims.
+- Clear narrative arc and stance.
+- Attribute insights to source articles.
+- Avoid cliches/superlatives.
+
+## Agent: newsletter
+### Usage
+```bash
+/newsletter <YYYY-MM>
+```
+
+### Consignes
+1. Section 1: Latest from lamouche.fr/notebook
+   - WebFetch `https://lamouche.fr/notebook/`
+   - Extract 10 most recent articles (title + URL)
+2. Section 2: Technical Watch Synthesis
+   - Read all files in `src/YYYY-MM/`
+   - Extract: Title, Source, Elevator pitch, Takeaways
+   - Write 2-3 paragraph synthesis
+3. Section 3: Worth Watching
+   - Select 10 most impactful articles from month
+   - Use elevator pitch as description
+4. Output in `newsletter/YYYY-MM.md`:
+```markdown
+# Newsletter YYYY-MM
+
+==intro text==
+
+## My latest articles from the notebook
+
+**[Title](https://lamouche.fr/notebook/posts/...)**
+Brief description
+[repeat 10x]
+
+---
+
+## What's hot today ?
+
+[2-3 paragraphs: themes, trends, practical implications]
+
+---
+
+## Worth watching
+
+Elevator pitch text.
+[Link](Source URL)
+[repeat 10x]
+
+---
+
+## Cartography for noobs
+
+**🧭 Want to understand how maps really work?**
+
+This newsletter explains, step by step, the foundations of modern cartography: data, projections, use cases, and key challenges simply, with no prior knowledge required.
+
+[Subscribe](https://subscribepage.io/ylAON7)
+```
+
+### Notes
+- Section 1: lamouche.fr URLs.
+- Sections 2-3: external Source URLs.
+- English, factual editorial tone.
+- Focus on engineering and future of work.
+
+## Agent: substackpost
+### Usage
+```bash
+/substackpost
+```
+
+### Consignes
+1. Get 15 most recent articles from `README.md` section `## Articles`, read each file.
+2. Analyze corpus: themes, patterns, central insight.
+3. Craft title in sentence case.
+4. Craft subtitle: compelling sentence <150 chars, italic.
+5. Write article (1500-2000 words) in English unless explicit user request:
+   - Opening hook (1-2 para)
+   - Big picture (2-3 para)
+   - Deep dive (4-6 para)
+   - Tensions/nuances (2-3 para)
+   - Looking ahead (1-2 para)
+6. Format:
+```markdown
+# [TITLE]
+
+*[Subtitle]*
+
+[Article body - no bullets in main text, 2-3 subheadings max]
+
+---
+
+## Sources
+1. [Title](source-url)
+[list all 15]
+```
+7. Save to `substack/YYYYMMDD-post-<slug>.md`.
+8. Copy to `substack/latest.md`.
+9. Commit and push:
+   - fetch/pull if behind
+   - commit message: `Add substack post: [TITLE]`
+
+### Style
+- Confident editorial voice.
+- Specific examples.
+- Clear stance and narrative arc.
+- Attribute insights.
+- Avoid cliches and superlatives.
+- Quality over exhaustive coverage.
+
 ## Agent: update-stats
 ### Usage
 ```bash

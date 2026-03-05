@@ -287,3 +287,11 @@
   commands_executed: nl -ba prompt-library/domain/market-watch.md, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push registry completion update.
+
+- date_time: 2026-03-05 17:14:40 CET
+  actor: agent
+  action_summary: Added missing Market Watch prompt sections matching newly restored registry entries (monthly-substackpost, newsletter, substackpost) and aligned agents.md.
+  files_changed: prompt-library/domain/market-watch.md, agents.md, version.md, releases.md, memory.md
+  commands_executed: rg -n checks on market-watch.md and agents.md, apply_patch, date
+  outcome_status: success
+  next_relevant_step: Commit and push missing prompt sections update.

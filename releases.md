@@ -1,5 +1,10 @@
 # Releases
 
+## 0.2.23 - 2026-03-05
+
+- Functional evolution: added missing prompt sections in Market Watch for registry entries `monthly-substackpost`, `newsletter`, and `substackpost`.
+- Functional evolution: aligned `agents.md` with the same added prompt sections for immediate local usage.
+
 ## 0.2.22 - 2026-03-05
 
 - Functional evolution: reintroduced missing Market Watch registry entries in `prompt-library/domain/market-watch.md`: `monthly-substackpost`, `newsletter`, and `substackpost`.
