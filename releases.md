@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.24 - 2026-03-05
+
+- Functional evolution: renamed Market Watch agent `monthly-substackpost` to `substack-post-monthly`, including usage command `/substack-post-monthly YYYY-MM`.
+
 ## 0.2.23 - 2026-03-05
 
 - Functional evolution: added missing prompt sections in Market Watch for registry entries `monthly-substackpost`, `newsletter`, and `substackpost`.

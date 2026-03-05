@@ -12,7 +12,7 @@ Point d'entree unique contenant toutes les consignes des agents.
 - `add-url`
 - `scan-list`
 - `monthly-synthesis`
-- `monthly-substackpost`
+- `substack-post-monthly`
 - `newsletter`
 - `update-stats`
 - `substackpost`
@@ -158,10 +158,10 @@ Synthese: https://url2
 - Avoid hyperbolic words.
 - ASCII filenames preferred.
 
-## Agent: monthly-substackpost
+## Agent: substack-post-monthly
 ### Usage
 ```bash
-/monthly-substackpost YYYY-MM
+/substack-post-monthly YYYY-MM
 ```
 
 ### Consignes
