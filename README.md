@@ -1,27 +1,40 @@
 # prompt-hub
 
-## Commande unique (repo public)
+## Quick Start
 
-Depuis n'importe quel dossier local, lancez :
+### Installation
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh)
 ```
 
-Cette commande :
-- télécharge le script d'installation depuis GitHub
-- exécute le script dans votre dossier courant
-- crée/met à jour `./.prompt-hub` puis génère `./agent.md`
+### Mise a jour
+
+Relancez exactement la meme commande :
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh)
+```
+
+### Important
+
+- Ne modifiez jamais le contenu du dossier `./.prompt-hub`.
+- Ce dossier est ecrase/reconstruit pendant les mises a jour.
 
 Prérequis :
 - `bash`, `curl`, `tar`
+
+Cette commande :
+- télécharge le script d'installation depuis GitHub
+- exécute le script dans votre dossier courant
+- crée/met à jour `./.prompt-hub` puis génère `./agents.md`
 
 ## Utiliser le script d'installation (local)
 
 Le script `install-prompt-hub.sh` permet de :
 - récupérer le contenu de `prompt-library` et le copier dans `./.prompt-hub`
-- demander quel fichier de domaine (`.md`) utiliser dans `./.prompt-hub/domain`
-- générer `./agent.md` en combinant `core/core.md` + le domaine sélectionné
+- demander quel(s) fichier(s) de domaine (`.md`) utiliser dans `./.prompt-hub/domain`
+- générer `./agents.md` en combinant `core/core.md` + le(s) domaine(s) sélectionné(s)
 
 ### Prérequis
 
@@ -41,7 +54,7 @@ Ensuite, choisissez le fichier de domaine proposé dans la liste (ex: `app-devel
 ### Résultat attendu
 
 - dossier local `./.prompt-hub` créé/mis à jour
-- fichier `./agent.md` créé à la racine
+- fichier `./agents.md` créé à la racine
 
 ### Option (URL d'archive personnalisée)
 
