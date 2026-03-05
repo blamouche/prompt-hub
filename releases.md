@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.22 - 2026-03-05
+
+- Functional evolution: reintroduced missing Market Watch registry entries in `prompt-library/domain/market-watch.md`: `monthly-substackpost`, `newsletter`, and `substackpost`.
+
 ## 0.2.21 - 2026-03-05
 
 - Functional evolution: added a new root HTML page `hello.html` with a basic Hello World template.

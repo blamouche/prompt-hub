@@ -12,7 +12,10 @@ Point d'entree unique contenant toutes les consignes des agents.
 - `add-url`
 - `scan-list`
 - `monthly-synthesis`
+- `monthly-substackpost`
+- `newsletter`
 - `update-stats`
+- `substackpost`
 - `weekly-recap`
 
 ## Routage Market Watch
