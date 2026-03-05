@@ -27,9 +27,27 @@ if [[ -z "${SRC_DIR}" || ! -d "${SRC_DIR}" ]]; then
   fi
 fi
 
-rm -rf "$TARGET_DIR"
 mkdir -p "$TARGET_DIR"
-cp -R "$SRC_DIR"/. "$TARGET_DIR"/
+
+# Update strategy:
+# - core/domain: replace entirely from source.
+# - app: merge by filename (overwrite same-name files, keep local-only files).
+for section in core domain; do
+  SRC_SECTION_DIR="$SRC_DIR/$section"
+  TARGET_SECTION_DIR="$TARGET_DIR/$section"
+  if [[ -d "$SRC_SECTION_DIR" ]]; then
+    rm -rf "$TARGET_SECTION_DIR"
+    mkdir -p "$TARGET_SECTION_DIR"
+    cp -R "$SRC_SECTION_DIR"/. "$TARGET_SECTION_DIR"/
+  fi
+done
+
+SRC_APP_DIR="$SRC_DIR/app"
+TARGET_APP_DIR="$TARGET_DIR/app"
+if [[ -d "$SRC_APP_DIR" ]]; then
+  mkdir -p "$TARGET_APP_DIR"
+  cp -R "$SRC_APP_DIR"/. "$TARGET_APP_DIR"/
+fi
 
 echo "Installed prompt library into: $TARGET_DIR"
 
