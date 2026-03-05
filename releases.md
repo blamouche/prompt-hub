@@ -1,5 +1,9 @@
 # Releases
 
+## 0.2.21 - 2026-03-05
+
+- Functional evolution: added a new root HTML page `hello.html` with a basic Hello World template.
+
 ## 0.2.20 - 2026-03-05
 
 - Functional evolution: in `prompt-library/domain/market-watch.md`, removed the Variables section and inlined all previously variable-based paths/files directly in agent instructions.
