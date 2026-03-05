@@ -1,8 +1,8 @@
 # Test Domain Prompt
 
-Use this domain to validate multi-domain selection behavior in `install-prompt-hub.sh`.
+Use this domain as a lightweight test profile for installation and selection flows.
 
 ## Mission
 
-- Confirm that multiple selected domain prompts are concatenated into `agents.md`.
-- Keep this file lightweight and safe to include in local tests.
+- Provide a minimal domain prompt for integration checks.
+- Stay safe and generic for non-production testing scenarios.

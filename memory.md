@@ -79,3 +79,59 @@
   commands_executed: apply_patch
   outcome_status: success
   next_relevant_step: Stage, commit, and push the README translation update.
+
+- date_time: 2026-03-05 14:08:15 CET
+  actor: agent
+  action_summary: Created branch `domain/market-watch` from `main` (keeping existing local modifications) and initialized branch-level version/release tracking.
+  files_changed: version.md, releases.md, memory.md
+  commands_executed: git checkout -b domain/market-watch, apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push branch initialization metadata.
+
+- date_time: 2026-03-05 14:29:28 CET
+  actor: agent
+  action_summary: Replaced "Agent Global" naming with "Market Watch" in the market-watch domain prompt and updated traceability/version files.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the Market Watch wording update.
+
+- date_time: 2026-03-05 14:30:35 CET
+  actor: agent
+  action_summary: Commented all variables in the Market Watch prompt variables block and updated versioning traceability files.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the variables comment update.
+
+- date_time: 2026-03-05 14:32:28 CET
+  actor: agent
+  action_summary: Removed monthly and standard substack post agents from the Market Watch prompt and updated versioning traceability files.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the agent removal update.
+
+- date_time: 2026-03-05 14:33:14 CET
+  actor: agent
+  action_summary: Removed newsletter agent from the Market Watch prompt and updated versioning traceability files.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the newsletter agent removal.
+
+- date_time: 2026-03-05 14:34:12 CET
+  actor: agent
+  action_summary: Removed Substack and Newsletter variable lines from the Market Watch variables block and updated versioning traceability files.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push the variable cleanup update.
+
+- date_time: 2026-03-05 14:37:19 CET
+  actor: agent
+  action_summary: Updated installer to generate agents.md with references to core/domain selected prompts instead of merged prompt content, and aligned README behavior description.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch, bash -n install-prompt-hub.sh, printf '1\n' | bash ./install-prompt-hub.sh (in temp directory)
+  outcome_status: success
+  next_relevant_step: Stage, commit, and push installer behavior update.

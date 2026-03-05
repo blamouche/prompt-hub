@@ -1,5 +1,34 @@
 # Releases
 
+## 0.2.6 - 2026-03-05
+
+- Functional evolution: changed installer output so `agents.md` now references selected core/domain prompt files instead of embedding full prompt contents.
+- Fix: updated README installer behavior description to match reference-based `agents.md` generation.
+
+## 0.2.5 - 2026-03-05
+
+- Fix: removed Substack and Newsletter variables from `prompt-library/domain/market-watch.md`.
+
+## 0.2.4 - 2026-03-05
+
+- Functional evolution: removed `newsletter-agent` from `prompt-library/domain/market-watch.md`.
+
+## 0.2.3 - 2026-03-05
+
+- Functional evolution: removed `monthly-substackpost-agent` and `substackpost-agent` from `prompt-library/domain/market-watch.md`.
+
+## 0.2.2 - 2026-03-05
+
+- Fix: commented all variable assignment lines in `prompt-library/domain/market-watch.md` section `Variables`.
+
+## 0.2.1 - 2026-03-05
+
+- Fix: replaced remaining "Agent Global" references with "Market Watch" in `prompt-library/domain/market-watch.md`.
+
+## 0.2.0 - 2026-03-05
+
+- Functional evolution: initialized the `domain/market-watch` branch from `main` to start work on a dedicated Market Watch domain.
+
 ## 0.1.2 - 2026-03-05
 
 - Functional evolution: translated `README.md` content from French to English while keeping the same structure and usage flow.

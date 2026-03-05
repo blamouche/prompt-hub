@@ -118,3 +118,13 @@ Use this prompt for software application development tasks across web, mobile, b
   - known limitations or follow-up items.
 - End with explicit status: `completed`, `partial`, or `blocked`.
 
+
+# Test Domain Prompt
+
+Use this domain as a lightweight test profile for installation and selection flows.
+
+## Mission
+
+- Provide a minimal domain prompt for integration checks.
+- Stay safe and generic for non-production testing scenarios.
+

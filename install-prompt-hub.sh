@@ -111,10 +111,13 @@ if [[ ! -f "$CORE_FILE" ]]; then
 fi
 
 {
-  cat "$CORE_FILE"
+  echo "# Agents"
+  echo ""
+  echo "Use the following prompt files:"
+  echo ""
+  echo "- Core: \`./.prompt-hub/core/core.md\`"
   for selected_domain_file in "${SELECTED_DOMAIN_FILES[@]}"; do
-    printf "\n\n"
-    cat "$DOMAIN_DIR/$selected_domain_file"
+    echo "- Domain: \`./.prompt-hub/domain/$selected_domain_file\`"
   done
   printf "\n"
 } > "$AGENT_FILE"
