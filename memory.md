@@ -319,3 +319,11 @@
   commands_executed: sed -n install-prompt-hub.sh, sed -n README.md, apply_patch, bash -n install-prompt-hub.sh, local installer fallback smoke test, date
   outcome_status: success
   next_relevant_step: Commit and push private-repo install support update.
+
+- date_time: 2026-03-05 21:41:33 CET
+  actor: agent
+  action_summary: Updated installer back to public-by-default download flow and aligned README quick start while keeping private token usage optional.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: sed -n install-prompt-hub.sh, sed -n README.md, apply_patch, bash -n install-prompt-hub.sh, local installer fallback smoke test, date
+  outcome_status: success
+  next_relevant_step: Commit and push public install flow update.

@@ -4,20 +4,10 @@
 
 Run the command from the target directory (the directory where you want to generate `./.prompt-hub` and `./agents.md`):
 
-Set a GitHub token with access to the private repository:
-
-```bash
-export PROMPT_HUB_GITHUB_TOKEN="<your_github_token>"
-```
-
 ### Installation
 
 ```bash
-curl -fsSL \
-  -H "Authorization: Bearer ${PROMPT_HUB_GITHUB_TOKEN}" \
-  -o install-prompt-hub.sh \
-  https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh
-bash ./install-prompt-hub.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh)
 ```
 
 ### Update
@@ -25,11 +15,7 @@ bash ./install-prompt-hub.sh
 Run the exact same command again:
 
 ```bash
-curl -fsSL \
-  -H "Authorization: Bearer ${PROMPT_HUB_GITHUB_TOKEN}" \
-  -o install-prompt-hub.sh \
-  https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh
-bash ./install-prompt-hub.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/blamouche/prompt-hub/main/install-prompt-hub.sh)
 ```
 
 ### Important
@@ -95,4 +81,10 @@ PROMPT_HUB_GITHUB_TOKEN="<your_github_token>" \
 PROMPT_HUB_REPO="owner/private-repo" \
 PROMPT_HUB_REF="main" \
 ./install-prompt-hub.sh
+```
+
+For private repositories, export a token with repository access before running the script:
+
+```bash
+export PROMPT_HUB_GITHUB_TOKEN="<your_github_token>"
 ```

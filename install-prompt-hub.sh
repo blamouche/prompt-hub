@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_OWNER_REPO="${PROMPT_HUB_REPO:-blamouche/prompt-hub}"
 REPO_REF="${PROMPT_HUB_REF:-main}"
-REPO_ARCHIVE_URL="${PROMPT_HUB_ARCHIVE_URL:-https://api.github.com/repos/${REPO_OWNER_REPO}/tarball/${REPO_REF}}"
+REPO_ARCHIVE_URL="${PROMPT_HUB_ARCHIVE_URL:-https://codeload.github.com/${REPO_OWNER_REPO}/tar.gz/refs/heads/${REPO_REF}}"
 GITHUB_TOKEN="${PROMPT_HUB_GITHUB_TOKEN:-${GITHUB_TOKEN:-}}"
 TARGET_DIR="${PWD}/.prompt-hub"
 AGENT_FILE="${PWD}/agents.md"

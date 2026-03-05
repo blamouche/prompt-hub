@@ -1,5 +1,11 @@
 # Releases
 
+## 0.2.27 - 2026-03-05
+
+- Fix: restored public-repository default installer behavior by switching default archive URL back to GitHub codeload (`https://codeload.github.com/...`).
+- Fix: updated Quick Start commands to public no-token install/update flow using `bash <(curl -fsSL ...)`.
+- Documentation: kept private-repository token usage as optional guidance.
+
 ## 0.2.26 - 2026-03-05
 
 - Functional evolution: installer now supports private repository archive download through `PROMPT_HUB_GITHUB_TOKEN` (fallback to `GITHUB_TOKEN`).
