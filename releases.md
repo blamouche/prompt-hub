@@ -1,5 +1,10 @@
 # Releases
 
+## 0.3.5 - 2026-03-06
+
+- Functional evolution: updated `add-tags` prompt in `prompt-library/domain/obsidian-work-assistant.md` to require English-only tags.
+- Documentation: clarified that inferred tags must be normalized to English even when notes are written in another language.
+
 ## 0.3.4 - 2026-03-06
 
 - Documentation: translated `prompt-library/domain/obsidian-work-assistant.md` from French to English.

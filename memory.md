@@ -383,3 +383,11 @@
   commands_executed: apply_patch translation, apply_patch version.md, apply_patch releases.md, date
   outcome_status: success
   next_relevant_step: Commit and push the English translation update.
+
+- date_time: 2026-03-06 15:40:47 CET
+  actor: agent
+  action_summary: Updated Obsidian `add-tags` prompt to enforce English-only tags and added explicit English normalization note.
+  files_changed: prompt-library/domain/obsidian-work-assistant.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch prompt update, apply_patch version.md, apply_patch releases.md, date
+  outcome_status: success
+  next_relevant_step: Commit and push the English-tags requirement update.

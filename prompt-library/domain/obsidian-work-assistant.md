@@ -27,6 +27,7 @@ Single entry point containing all instructions for Obsidian prompts.
 2. List Markdown notes (`.md`) and select the `X` most recent notes (sorted by modification date descending).
 3. For each selected note, analyze content and propose relevant tags in Obsidian format:
    - maximum 5 tags total per note,
+   - tags must be in English,
    - lowercase tags,
    - `kebab-case` format (example: `project-management`),
    - no duplicates.
@@ -45,4 +46,5 @@ tags:
 ### Notes
 - `X` must be a strictly positive integer.
 - If the vault contains fewer than `X` notes, process all available notes.
+- Always normalize inferred tags to English, even when note content is in another language.
 - Never create generic low-signal tags (`note`, `todo`, `misc`, etc.) unless explicitly requested.
