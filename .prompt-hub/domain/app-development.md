@@ -50,6 +50,7 @@ Use this prompt for software application development tasks across web, mobile, b
 ## Documentation and Traceability
 
 - Update technical documentation when behavior, APIs, setup, or architecture changes.
+- Update `README.md` when delivered changes are relevant to existing README content.
 - Record key decisions, assumptions, and tradeoffs in concise notes.
 - Ensure another engineer can understand what changed and why without extra context.
 

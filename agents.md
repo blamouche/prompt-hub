@@ -2,6 +2,10 @@
 
 Merged prompt content from app, core, and selected domain file(s).
 
+## Source: `./.prompt-hub/app/README.md`
+
+Drop in this folder your custom prompts and restart install script
+
 ## Source: `./.prompt-hub/core/core.md`
 
 # Core Prompt
@@ -115,6 +119,7 @@ Use this prompt for software application development tasks across web, mobile, b
 ## Documentation and Traceability
 
 - Update technical documentation when behavior, APIs, setup, or architecture changes.
+- Update `README.md` when delivered changes are relevant to existing README content.
 - Record key decisions, assumptions, and tradeoffs in concise notes.
 - Ensure another engineer can understand what changed and why without extra context.
 
