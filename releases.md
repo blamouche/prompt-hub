@@ -1,5 +1,10 @@
 # Releases
 
+## 0.3.9 - 2026-03-06
+
+- Functional evolution: updated `add-tags` prompt in `prompt-library/domain/obsidian-work-assistant.md` to exclude folders whose names start with `.` when scanning recent notes.
+- Safety: added explicit restriction to never modify non-note files (technical files, prompt files, databases, config files, binaries, or any non-Markdown file).
+
 ## 0.3.8 - 2026-03-06
 
 - Fix: adjusted installer output so generated `agents.md` starts with the version line as the first line of the file.

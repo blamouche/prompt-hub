@@ -24,7 +24,7 @@ Single entry point containing all instructions for Obsidian prompts.
 
 ### Instructions
 1. Identify the target Obsidian vault (current directory unless the user states otherwise).
-2. List Markdown notes (`.md`) and select the `X` most recent notes (sorted by modification date descending).
+2. List Markdown notes (`.md`) and select the `X` most recent notes (sorted by modification date descending), excluding any path inside folders whose names start with `.`.
 3. For each selected note, analyze content and propose relevant tags in Obsidian format:
    - maximum 5 tags total per note,
    - tags must be in English,
@@ -47,4 +47,6 @@ tags:
 - `X` must be a strictly positive integer.
 - If the vault contains fewer than `X` notes, process all available notes.
 - Always normalize inferred tags to English, even when note content is in another language.
+- Never scan hidden folders (names starting with `.`), including nested hidden paths.
+- Never modify non-note files (technical files, prompt files, databases, configuration files, binaries, or any file that is not a Markdown note).
 - Never create generic low-signal tags (`note`, `todo`, `misc`, etc.) unless explicitly requested.

@@ -415,3 +415,11 @@
   commands_executed: apply_patch install script, apply_patch README, bash -n install-prompt-hub.sh, isolated tmp install smoke test, apply_patch version.md, apply_patch releases.md, date
   outcome_status: success
   next_relevant_step: Commit and push first-line version header fix.
+
+- date_time: 2026-03-06 15:58:46 CET
+  actor: agent
+  action_summary: Updated Obsidian `add-tags` prompt to exclude hidden folders from scanning and forbid modifying non-note files.
+  files_changed: prompt-library/domain/obsidian-work-assistant.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch prompt update, apply_patch version.md, apply_patch releases.md, date
+  outcome_status: success
+  next_relevant_step: Commit and push hidden-folder and non-note safety constraints.
