@@ -15,6 +15,7 @@ cleanup() {
 trap cleanup EXIT
 
 SRC_DIR=""
+PROMPT_HUB_VERSION="unknown"
 echo "Downloading prompt-library..."
 download_failed=false
 if [[ -n "$GITHUB_TOKEN" ]]; then
@@ -51,6 +52,16 @@ if [[ -z "${SRC_DIR}" || ! -d "${SRC_DIR}" ]]; then
     exit 1
   fi
 fi
+
+SRC_ROOT_DIR="$(dirname "$SRC_DIR")"
+if [[ -f "$SRC_ROOT_DIR/version.md" ]]; then
+  PROMPT_HUB_VERSION="$(head -n 1 "$SRC_ROOT_DIR/version.md" | tr -d '[:space:]')"
+fi
+if [[ -z "$PROMPT_HUB_VERSION" ]]; then
+  PROMPT_HUB_VERSION="unknown"
+fi
+
+echo "Prompt Hub version: $PROMPT_HUB_VERSION"
 
 mkdir -p "$TARGET_DIR"
 
@@ -161,6 +172,8 @@ append_file_to_agents() {
 
 {
   echo "# Agents"
+  echo ""
+  echo "Version: $PROMPT_HUB_VERSION"
   echo ""
   echo "Merged prompt content from app, core, and selected domain file(s)."
   echo ""

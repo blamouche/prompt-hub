@@ -30,6 +30,7 @@ This command:
 - downloads the install script from GitHub
 - runs the script in your current directory
 - creates/updates `./.prompt-hub` and generates `./agents.md`
+- prints the current Prompt Hub version during installation
 
 ## Use the Local Install Script
 
@@ -39,6 +40,7 @@ The `install-prompt-hub.sh` script:
 - keeps other existing files in `./.prompt-hub/app` unchanged
 - asks which domain file(s) (`.md`) to use from `./.prompt-hub/domain`
 - generates `./agents.md` by merging:
+  - current Prompt Hub version header
   - all files from `./.prompt-hub/app`
   - all files from `./.prompt-hub/core`
   - the selected file(s) from `./.prompt-hub/domain`

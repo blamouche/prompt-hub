@@ -1,5 +1,11 @@
 # Releases
 
+## 0.3.7 - 2026-03-06
+
+- Functional evolution: installer now reads the current `version.md` value from the source package and prints it during installation.
+- Functional evolution: generated `agents.md` now includes the current Prompt Hub version at the top of the file.
+- Documentation: updated README installer behavior to mention version display and version header in `agents.md`.
+
 ## 0.3.6 - 2026-03-06
 
 - Functional evolution: added explicit instruction in `prompt-library/domain/app-development.md` to update `README.md` when changes are relevant to existing README content.

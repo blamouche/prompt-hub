@@ -399,3 +399,11 @@
   commands_executed: apply_patch app-development.md, apply_patch version.md, apply_patch releases.md, date
   outcome_status: success
   next_relevant_step: Commit and push the app-development README instruction update.
+
+- date_time: 2026-03-06 15:51:26 CET
+  actor: agent
+  action_summary: Updated installer to display current Prompt Hub version during install and include version header at top of generated agents.md.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch install script, apply_patch README, bash -n install-prompt-hub.sh, isolated tmp install smoke test with domain selection, apply_patch version.md, apply_patch releases.md, date
+  outcome_status: success
+  next_relevant_step: Commit and push installer version display/header updates.
