@@ -343,3 +343,11 @@
   commands_executed: mv prompt-library/domain/work-assistant.md prompt-library/domain/obsidian-work-assistant.md, apply_patch, date
   outcome_status: success
   next_relevant_step: Commit and push the domain filename rename.
+
+- date_time: 2026-03-06 15:11:10 CET
+  actor: agent
+  action_summary: Replaced specific project/tool example content in the Obsidian work assistant prompt with generic, neutral example text.
+  files_changed: prompt-library/domain/obsidian-work-assistant.md, memory.md
+  commands_executed: sed -n prompt-library/domain/obsidian-work-assistant.md, apply_patch, tail -n memory.md, date
+  outcome_status: success
+  next_relevant_step: Commit and push the generic example wording update.
