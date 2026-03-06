@@ -1,5 +1,10 @@
 # Releases
 
+## 0.3.0 - 2026-03-06
+
+- Functional evolution: created branch `domain/work-assistant` from `main`.
+- Functional evolution: added new domain prompt file `prompt-library/domain/work-assistant.md`.
+
 ## 0.2.27 - 2026-03-05
 
 - Fix: restored public-repository default installer behavior by switching default archive URL back to GitHub codeload (`https://codeload.github.com/...`).
