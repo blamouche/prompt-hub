@@ -1,20 +1,20 @@
 # Obsidian Work Assistant
 
-Point d'entree unique contenant toutes les consignes des prompts Obsidian.
+Single entry point containing all instructions for Obsidian prompts.
 
 ## Usage
 ```bash
 /agents <prompt> [arguments]
 ```
 
-## Registre
+## Registry
 - `add-tags`
 
-## Routage Obsidian Work Assistant
-1. Verifier que `<prompt>` existe dans le registre.
-2. Appliquer uniquement la section de consignes correspondante.
-3. Utiliser directement les chemins/fichiers definis dans chaque consigne.
-4. Si le prompt est inconnu, retourner la liste du registre.
+## Obsidian Work Assistant Routing
+1. Verify that `<prompt>` exists in the registry.
+2. Apply only the matching instruction section.
+3. Use the paths/files defined directly in each instruction.
+4. If the prompt is unknown, return the registry list.
 
 ## Prompt: add-tags
 ### Usage
@@ -22,15 +22,15 @@ Point d'entree unique contenant toutes les consignes des prompts Obsidian.
 /add-tags <X>
 ```
 
-### Consignes
-1. Identifier le vault Obsidian cible (repertoire courant, sauf indication contraire de l'utilisateur).
-2. Lister les notes Markdown (`.md`) et selectionner les `X` notes les plus recentes (tri par date de modification descendante).
-3. Pour chaque note selectionnee, analyser le contenu et proposer des tags pertinents au format Obsidian:
-   - maximum 5 tags au total par note,
-   - tags en minuscules,
-   - format `kebab-case` (ex: `project-management`),
-   - pas de doublons.
-4. Inserer ou mettre a jour l'entete YAML frontmatter de la note avec la cle `tags`:
+### Instructions
+1. Identify the target Obsidian vault (current directory unless the user states otherwise).
+2. List Markdown notes (`.md`) and select the `X` most recent notes (sorted by modification date descending).
+3. For each selected note, analyze content and propose relevant tags in Obsidian format:
+   - maximum 5 tags total per note,
+   - lowercase tags,
+   - `kebab-case` format (example: `project-management`),
+   - no duplicates.
+4. Insert or update the YAML frontmatter header with the `tags` key:
 ```yaml
 ---
 tags:
@@ -38,11 +38,11 @@ tags:
   - tag-2
 ---
 ```
-5. Si la note contient deja des tags, conserver les tags existants et ajouter uniquement des tags pertinents manquants sans depasser 5 tags au total.
-6. Ne modifier que la section frontmatter (pas le corps de la note).
-7. Fournir un recapitulatif final note par note: tags ajoutes, tags conserves, ou note ignoree (si aucun tag pertinent).
+5. If a note already contains tags, keep existing tags and add only missing relevant tags without exceeding 5 tags total.
+6. Modify only the frontmatter section (do not change note body content).
+7. Provide a final note-by-note summary: added tags, preserved tags, or skipped note (if no relevant tag is found).
 
 ### Notes
-- `X` doit etre un entier strictement positif.
-- Si le vault contient moins de `X` notes, traiter toutes les notes disponibles.
-- Ne jamais creer de tags generiques vides de sens (`note`, `todo`, `misc`, etc.) sauf si explicitement demandes.
+- `X` must be a strictly positive integer.
+- If the vault contains fewer than `X` notes, process all available notes.
+- Never create generic low-signal tags (`note`, `todo`, `misc`, etc.) unless explicitly requested.

@@ -375,3 +375,11 @@
   commands_executed: apply_patch version.md, apply_patch releases.md, date
   outcome_status: success
   next_relevant_step: Commit and push version/release traceability updates.
+
+- date_time: 2026-03-06 15:40:12 CET
+  actor: agent
+  action_summary: Translated the Obsidian work assistant prompt content from French to English while preserving `add-tags` behavior.
+  files_changed: prompt-library/domain/obsidian-work-assistant.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch translation, apply_patch version.md, apply_patch releases.md, date
+  outcome_status: success
+  next_relevant_step: Commit and push the English translation update.

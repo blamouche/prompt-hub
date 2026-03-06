@@ -1,5 +1,10 @@
 # Releases
 
+## 0.3.4 - 2026-03-06
+
+- Documentation: translated `prompt-library/domain/obsidian-work-assistant.md` from French to English.
+- Functional evolution: kept the same `add-tags` behavior while clarifying all instructions in English.
+
 ## 0.3.3 - 2026-03-06
 
 - Functional evolution: initialized `prompt-library/domain/obsidian-work-assistant.md` with a dedicated Obsidian prompt registry and routing section.
