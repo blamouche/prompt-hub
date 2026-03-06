@@ -391,3 +391,11 @@
   commands_executed: apply_patch prompt update, apply_patch version.md, apply_patch releases.md, date
   outcome_status: success
   next_relevant_step: Commit and push the English-tags requirement update.
+
+- date_time: 2026-03-06 15:48:31 CET
+  actor: agent
+  action_summary: Updated app development domain prompt to require README updates when changes are relevant to existing README content.
+  files_changed: prompt-library/domain/app-development.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch app-development.md, apply_patch version.md, apply_patch releases.md, date
+  outcome_status: success
+  next_relevant_step: Commit and push the app-development README instruction update.

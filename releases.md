@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.6 - 2026-03-06
+
+- Functional evolution: added explicit instruction in `prompt-library/domain/app-development.md` to update `README.md` when changes are relevant to existing README content.
+
 ## 0.3.5 - 2026-03-06
 
 - Functional evolution: updated `add-tags` prompt in `prompt-library/domain/obsidian-work-assistant.md` to require English-only tags.
