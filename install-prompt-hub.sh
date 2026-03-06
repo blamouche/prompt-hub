@@ -171,9 +171,9 @@ append_file_to_agents() {
 }
 
 {
-  echo "# Agents"
-  echo ""
   echo "Version: $PROMPT_HUB_VERSION"
+  echo ""
+  echo "# Agents"
   echo ""
   echo "Merged prompt content from app, core, and selected domain file(s)."
   echo ""

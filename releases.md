@@ -1,5 +1,10 @@
 # Releases
 
+## 0.3.8 - 2026-03-06
+
+- Fix: adjusted installer output so generated `agents.md` starts with the version line as the first line of the file.
+- Documentation: clarified in README that the version is written on the first line at the top of `agents.md`.
+
 ## 0.3.7 - 2026-03-06
 
 - Functional evolution: installer now reads the current `version.md` value from the source package and prints it during installation.

@@ -407,3 +407,11 @@
   commands_executed: apply_patch install script, apply_patch README, bash -n install-prompt-hub.sh, isolated tmp install smoke test with domain selection, apply_patch version.md, apply_patch releases.md, date
   outcome_status: success
   next_relevant_step: Commit and push installer version display/header updates.
+
+- date_time: 2026-03-06 15:54:58 CET
+  actor: agent
+  action_summary: Fixed installer header order so generated agents.md starts with version as the first line, then # Agents.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: apply_patch install script, apply_patch README, bash -n install-prompt-hub.sh, isolated tmp install smoke test, apply_patch version.md, apply_patch releases.md, date
+  outcome_status: success
+  next_relevant_step: Commit and push first-line version header fix.

@@ -40,7 +40,7 @@ The `install-prompt-hub.sh` script:
 - keeps other existing files in `./.prompt-hub/app` unchanged
 - asks which domain file(s) (`.md`) to use from `./.prompt-hub/domain`
 - generates `./agents.md` by merging:
-  - current Prompt Hub version header
+  - current Prompt Hub version (first line at top of file)
   - all files from `./.prompt-hub/app`
   - all files from `./.prompt-hub/core`
   - the selected file(s) from `./.prompt-hub/domain`
