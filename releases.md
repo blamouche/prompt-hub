@@ -1,5 +1,11 @@
 # Releases
 
+## 0.3.2 - 2026-03-06
+
+- Functional evolution: installer now merges all files from `prompt-library/app` into local `./.prompt-hub/app`, replacing files with identical relative paths.
+- Fix: installer no longer creates `.bkp` backups for app files during install/update.
+- Documentation: updated README app behavior to reflect merge-and-replace (same-name/path) without backups.
+
 ## 0.3.1 - 2026-03-06
 
 - Fix: renamed domain file `prompt-library/domain/work-assistant.md` to `prompt-library/domain/obsidian-work-assistant.md`.

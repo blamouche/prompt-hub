@@ -56,7 +56,7 @@ mkdir -p "$TARGET_DIR"
 
 # Update strategy:
 # - core/domain: replace entirely from source.
-# - app: only replace files ending with ".sample"; keep all other local app files unchanged.
+# - app: merge from source; replace files with identical relative paths and keep other local files unchanged.
 for section in core domain; do
   SRC_SECTION_DIR="$SRC_DIR/$section"
   TARGET_SECTION_DIR="$TARGET_DIR/$section"
@@ -69,25 +69,9 @@ done
 
 SRC_APP_DIR="$SRC_DIR/app"
 TARGET_APP_DIR="$TARGET_DIR/app"
-app_backup_created="false"
 if [[ -d "$SRC_APP_DIR" ]]; then
   mkdir -p "$TARGET_APP_DIR"
-  while IFS= read -r src_sample_file; do
-    sample_name="$(basename "$src_sample_file")"
-    target_sample_file="$TARGET_APP_DIR/$sample_name"
-    if [[ -f "$target_sample_file" ]]; then
-      cp "$target_sample_file" "${target_sample_file}.bkp"
-      app_backup_created="true"
-    fi
-    cp "$src_sample_file" "$target_sample_file"
-  done < <(find "$SRC_APP_DIR" -type f -name '*.sample' | sort)
-fi
-
-app_backup_files=()
-if [[ -d "$TARGET_APP_DIR" ]]; then
-  while IFS= read -r backup_file; do
-    app_backup_files+=("$backup_file")
-  done < <(find "$TARGET_APP_DIR" -type f -name '*.bkp' | sort)
+  cp -R "$SRC_APP_DIR"/. "$TARGET_APP_DIR"/
 fi
 
 echo "Installed prompt library into: $TARGET_DIR"
@@ -210,13 +194,3 @@ echo ""
 echo "Created: $AGENT_FILE"
 echo "Using domains: $selected_domains_display"
 echo "Removed unselected domain files from: $DOMAIN_DIR"
-if [[ ${#app_backup_files[@]} -gt 0 ]]; then
-  echo ""
-  echo "Warning: backup file(s) detected in $TARGET_APP_DIR:"
-  for backup_file in "${app_backup_files[@]}"; do
-    echo " - $backup_file"
-  done
-  if [[ "$app_backup_created" == "true" ]]; then
-    echo "New backups were created before copying app updates."
-  fi
-fi

@@ -35,15 +35,14 @@ This command:
 
 The `install-prompt-hub.sh` script:
 - retrieves `prompt-library` content and copies it into `./.prompt-hub`
-- in `./.prompt-hub/app`, replaces only files ending with `.sample`
-- before replacing `.sample` app files, backs up existing target `.sample` files with `.bkp` suffix
+- in `./.prompt-hub/app`, replaces files that have identical names/paths from source app content
+- keeps other existing files in `./.prompt-hub/app` unchanged
 - asks which domain file(s) (`.md`) to use from `./.prompt-hub/domain`
 - generates `./agents.md` by merging:
   - all files from `./.prompt-hub/app`
   - all files from `./.prompt-hub/core`
   - the selected file(s) from `./.prompt-hub/domain`
 - removes non-selected domain files from local `./.prompt-hub/domain`
-- warns during install when `.bkp` files are present in `./.prompt-hub/app`
 
 ### Requirements
 

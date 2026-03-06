@@ -351,3 +351,11 @@
   commands_executed: sed -n prompt-library/domain/obsidian-work-assistant.md, apply_patch, tail -n memory.md, date
   outcome_status: success
   next_relevant_step: Commit and push the generic example wording update.
+
+- date_time: 2026-03-06 15:23:25 CET
+  actor: agent
+  action_summary: Updated installer app sync behavior to merge source app files by identical path/name without backups, and aligned README/versioning records.
+  files_changed: install-prompt-hub.sh, README.md, version.md, releases.md, memory.md
+  commands_executed: sed -n README.md and install-prompt-hub.sh, apply_patch, bash -n install-prompt-hub.sh, local installer merge smoke test, date
+  outcome_status: success
+  next_relevant_step: Commit and push app merge-without-backup installer update.
