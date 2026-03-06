@@ -1,5 +1,11 @@
 # Releases
 
+## 0.3.3 - 2026-03-06
+
+- Functional evolution: initialized `prompt-library/domain/obsidian-work-assistant.md` with a dedicated Obsidian prompt registry and routing section.
+- Functional evolution: added prompt `add-tags` to scan the `X` most recent vault notes and update note frontmatter tags in Obsidian YAML format.
+- Fix: constrained tag generation to relevant tags only, with a maximum of 5 tags per note and deduplication guidance.
+
 ## 0.3.2 - 2026-03-06
 
 - Functional evolution: installer now merges all files from `prompt-library/app` into local `./.prompt-hub/app`, replacing files with identical relative paths.

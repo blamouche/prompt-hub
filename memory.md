@@ -359,3 +359,19 @@
   commands_executed: sed -n README.md and install-prompt-hub.sh, apply_patch, bash -n install-prompt-hub.sh, local installer merge smoke test, date
   outcome_status: success
   next_relevant_step: Commit and push app merge-without-backup installer update.
+
+- date_time: 2026-03-06 15:38:03 CET
+  actor: agent
+  action_summary: Initialized Obsidian work assistant domain file and added new prompt `add-tags` to scan the X latest vault notes and update Obsidian frontmatter tags (max 5 per note).
+  files_changed: prompt-library/domain/obsidian-work-assistant.md, memory.md
+  commands_executed: wc/cat inspection, cat heredoc write for domain file, date
+  outcome_status: success
+  next_relevant_step: Commit and push the new Obsidian `add-tags` prompt.
+
+- date_time: 2026-03-06 15:38:31 CET
+  actor: agent
+  action_summary: Bumped patch version and added release note entry for the new Obsidian `add-tags` domain prompt.
+  files_changed: version.md, releases.md, memory.md
+  commands_executed: apply_patch version.md, apply_patch releases.md, date
+  outcome_status: success
+  next_relevant_step: Commit and push version/release traceability updates.
