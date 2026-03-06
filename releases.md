@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.1 - 2026-03-06
+
+- Fix: renamed domain file `prompt-library/domain/work-assistant.md` to `prompt-library/domain/obsidian-work-assistant.md`.
+
 ## 0.3.0 - 2026-03-06
 
 - Functional evolution: created branch `domain/work-assistant` from `main`.
