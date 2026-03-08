@@ -423,3 +423,11 @@
   commands_executed: apply_patch prompt update, apply_patch version.md, apply_patch releases.md, date
   outcome_status: success
   next_relevant_step: Commit and push hidden-folder and non-note safety constraints.
+
+- date_time: 2026-03-08 CET
+  actor: agent
+  action_summary: Added new Market Watch agent `newsletter-maps-agent` to generate monthly maps/GIS-focused newsletters with continuity check and output to newsletter/maps/.
+  files_changed: prompt-library/domain/market-watch.md, version.md, releases.md, memory.md
+  commands_executed: Edit (registry + agent section)
+  outcome_status: success
+  next_relevant_step: Commit and push the newsletter-maps-agent addition.

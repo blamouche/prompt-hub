@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.10 - 2026-03-08
+
+- Functional evolution: added new Market Watch agent `newsletter-maps-agent` to `prompt-library/domain/market-watch.md` for generating monthly maps-focused newsletters with cartography/GIS focus, continuity check against previous editions, and output to `newsletter/maps/YYYY-MM-DD - newsletter maps.md`.
+
 ## 0.3.9 - 2026-03-06
 
 - Functional evolution: updated `add-tags` prompt in `prompt-library/domain/obsidian-work-assistant.md` to exclude folders whose names start with `.` when scanning recent notes.
