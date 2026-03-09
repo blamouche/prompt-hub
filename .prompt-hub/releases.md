@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.12 - 2026-03-09
+
+- Functional evolution: installer now commits all changes at end of install/update (`.prompt-hub/`, `agents.md`) with a message including version and selected domains; skips commit if no changes detected; skips gracefully if not in a git repository.
+
 ## 0.3.11 - 2026-03-09
 
 - Functional evolution: updated `core.md` to maintain `.prompt-hub/memory.md` instead of `memory.md` at project root.

@@ -221,3 +221,17 @@ echo ""
 echo "Created: $AGENT_FILE"
 echo "Using domains: $selected_domains_display"
 echo "Removed unselected domain files from: $DOMAIN_DIR"
+
+if git -C "$PWD" rev-parse --is-inside-work-tree &>/dev/null; then
+  git -C "$PWD" add \
+    "$TARGET_DIR" \
+    "$AGENT_FILE"
+  if ! git -C "$PWD" diff --cached --quiet; then
+    git -C "$PWD" commit -m "Install/update prompt-hub $PROMPT_HUB_VERSION (domains: $selected_domains_display)"
+    echo "Committed prompt-hub install."
+  else
+    echo "Nothing to commit (no changes detected)."
+  fi
+else
+  echo "Not a git repository — skipping commit."
+fi

@@ -439,3 +439,11 @@
   commands_executed: Edit, mv (migration of root files)
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Updated installer to auto-commit .prompt-hub/ and agents.md at end of install/update, with version and domain info in commit message; skips if no changes or not a git repo.
+  files_changed: install-prompt-hub.sh, .prompt-hub/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  commands_executed: Edit, bash -n (syntax check)
+  outcome_status: success
+  next_relevant_step: Commit and push.
