@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.20 - 2026-03-09
+
+- Cleanup: deleted all HTML files from project root (`helloworld.html`, `helloworld2.html`, `helloworld3.html`).
+
 ## 0.3.19 - 2026-03-09
 
 - Fix: corrected `notice.md` source path in installer from `$SRC_DIR/../notice.md` to `$SRC_DIR/notice.md` (file is inside `prompt-library/`, not at repo root).
