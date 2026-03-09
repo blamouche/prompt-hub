@@ -54,9 +54,8 @@ if [[ -z "${SRC_DIR}" || ! -d "${SRC_DIR}" ]]; then
   fi
 fi
 
-SRC_ROOT_DIR="$(dirname "$SRC_DIR")"
-if [[ -f "$SRC_ROOT_DIR/version.md" ]]; then
-  PROMPT_HUB_VERSION="$(head -n 1 "$SRC_ROOT_DIR/version.md" | tr -d '[:space:]')"
+if [[ -f "$SRC_DIR/version.md" ]]; then
+  PROMPT_HUB_VERSION="$(head -n 1 "$SRC_DIR/version.md" | tr -d '[:space:]')"
 fi
 if [[ -z "$PROMPT_HUB_VERSION" ]]; then
   PROMPT_HUB_VERSION="unknown"

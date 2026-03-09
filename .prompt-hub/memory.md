@@ -1,5 +1,12 @@
 # Memory Log
 
+- date_time: 2026-03-09 00:03:00 CET
+  actor: agent
+  action_summary: Fixed installer version always being "unknown" — was reading from wrong directory (parent of prompt-library instead of prompt-library itself). Bumped to 0.3.29.
+  files_changed: install-prompt-hub.sh, .prompt-hub/version.md, prompt-library/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  outcome_status: success
+  next_relevant_step: Commit and push.
+
 - date_time: 2026-03-09 00:02:00 CET
   actor: agent
   action_summary: Separated prompt-hub version from local repo version — installer writes prompt-hub-version.md; auto-update check updated accordingly. Bumped to 0.3.28.
