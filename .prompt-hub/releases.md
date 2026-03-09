@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.22 - 2026-03-09
+
+- fix: updated Task Management paths to `.prompt-hub/todo.md` and `.prompt-hub/lessons.md`.
+
 ## 0.3.21 - 2026-03-09
 
 - feat: added Verification Before Done, Demand Elegance, Autonomous Bug Fixing, and Task Management sections to app-development domain prompt.

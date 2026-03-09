@@ -73,9 +73,9 @@ Use this prompt for software application development tasks across web, mobile, b
 
 ## Task Management
 
-- Write plan to `tasks/todo.md`.
-- Add a review section to `tasks/todo.md` when done.
-- Update `tasks/lessons.md` after corrections.
+- Write plan to `.prompt-hub/todo.md`.
+- Add a review section to `.prompt-hub/todo.md` when done.
+- Update `.prompt-hub/lessons.md` after corrections.
 
 ## Completion Contract
 

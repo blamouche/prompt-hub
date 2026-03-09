@@ -519,3 +519,11 @@
   commands_executed: Edit
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Corrected Task Management paths in app-development prompt to use .prompt-hub/todo.md and .prompt-hub/lessons.md.
+  files_changed: prompt-library/domain/app-development.md, .prompt-hub/version.md, .prompt-hub/releases.md, prompt-library/version.md, .prompt-hub/memory.md
+  commands_executed: Edit
+  outcome_status: success
+  next_relevant_step: Commit and push.
