@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.24 - 2026-03-09
+
+- refactor(core): restructured core.md for logical flow; moved Core Principles up, merged Planning into Task Management with .prompt-hub/ file references, moved Output Contract to end.
+
 ## 0.3.23 - 2026-03-09
 
 - refactor(app-development): restructured sections for logical workflow order; merged Demand Elegance into Engineering Standards; merged Verification Before Done into Quality Requirements; moved Task Management to top.

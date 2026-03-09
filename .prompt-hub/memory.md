@@ -535,3 +535,11 @@
   commands_executed: Write, Edit
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Restructured core.md; moved Core Principles up, merged Planning into Task Management with .prompt-hub/ file references, moved Output Contract to end.
+  files_changed: prompt-library/core/core.md, .prompt-hub/version.md, .prompt-hub/releases.md, prompt-library/version.md, .prompt-hub/memory.md
+  commands_executed: Write, Edit
+  outcome_status: success
+  next_relevant_step: Commit and push.
