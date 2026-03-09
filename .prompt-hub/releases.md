@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.26 - 2026-03-09
+
+- feat: added hello.html Hello World page.
+
 ## 0.3.25 - 2026-03-09
 
 - feat: added daily auto-update check instructions to notice.md — agent checks remote version once per day and runs silent update preserving current domain selection.
