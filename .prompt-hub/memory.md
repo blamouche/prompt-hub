@@ -527,3 +527,11 @@
   commands_executed: Edit
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Restructured app-development prompt for logical workflow order; merged Demand Elegance into Engineering Standards; merged Verification Before Done into Quality Requirements; moved Task Management to top.
+  files_changed: prompt-library/domain/app-development.md, .prompt-hub/version.md, .prompt-hub/releases.md, prompt-library/version.md, .prompt-hub/memory.md
+  commands_executed: Write, Edit
+  outcome_status: success
+  next_relevant_step: Commit and push.
