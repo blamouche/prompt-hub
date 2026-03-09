@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.13 - 2026-03-09
+
+- Documentation: rewrote `prompt-library/app/README.md` to explain that custom project-specific prompts can be placed in `.prompt-hub/app/`, are preserved across updates, and require re-running the installer to take effect.
+
 ## 0.3.12 - 2026-03-09
 
 - Functional evolution: installer now commits all changes at end of install/update (`.prompt-hub/`, `agents.md`) with a message including version and selected domains; skips commit if no changes detected; skips gracefully if not in a git repository.
