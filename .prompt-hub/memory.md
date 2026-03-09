@@ -495,3 +495,11 @@
   commands_executed: Write, Edit, cp, bash -n
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Fixed notice.md source path in installer from $SRC_DIR/../notice.md to $SRC_DIR/notice.md (file is inside prompt-library/, not at repo root).
+  files_changed: install-prompt-hub.sh, prompt-library/version.md, .prompt-hub/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  commands_executed: Edit, bash -n
+  outcome_status: success
+  next_relevant_step: Commit and push.

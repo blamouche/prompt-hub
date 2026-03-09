@@ -83,8 +83,8 @@ done
 # - notice.md, core/domain: replace entirely from source.
 # - app: merge from source; replace files with identical relative paths and keep other local files unchanged.
 # - memory.md, version.md, releases.md in TARGET_DIR are never touched (user-owned files).
-if [[ -f "$SRC_DIR/../notice.md" ]]; then
-  cp "$SRC_DIR/../notice.md" "$TARGET_DIR/notice.md"
+if [[ -f "$SRC_DIR/notice.md" ]]; then
+  cp "$SRC_DIR/notice.md" "$TARGET_DIR/notice.md"
 fi
 
 for section in core domain; do

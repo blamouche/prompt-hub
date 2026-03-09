@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.19 - 2026-03-09
+
+- Fix: corrected `notice.md` source path in installer from `$SRC_DIR/../notice.md` to `$SRC_DIR/notice.md` (file is inside `prompt-library/`, not at repo root).
+
 ## 0.3.18 - 2026-03-09
 
 - Functional evolution: extracted MANDATORY COMPLIANCE NOTICE from installer script into `prompt-library/notice.md`.
