@@ -1,5 +1,13 @@
 # Releases
 
+## 0.3.11 - 2026-03-09
+
+- Functional evolution: updated `core.md` to maintain `.prompt-hub/memory.md` instead of `memory.md` at project root.
+- Functional evolution: updated `app-development.md` to maintain `.prompt-hub/version.md` and `.prompt-hub/releases.md` instead of root-level files.
+- Functional evolution: updated installer to migrate legacy root-level `memory.md`, `version.md`, `releases.md` to `.prompt-hub/` on first run after upgrade.
+- Safety: installer now explicitly documents that `memory.md`, `version.md`, `releases.md` in `.prompt-hub/` are user-owned files never overwritten during updates.
+- Migration: moved `memory.md`, `version.md`, `releases.md` from project root to `.prompt-hub/`.
+
 ## 0.3.10 - 2026-03-08
 
 - Functional evolution: added new Market Watch agent `newsletter-maps-agent` to `prompt-library/domain/market-watch.md` for generating monthly maps-focused newsletters with cartography/GIS focus, continuity check against previous editions, and output to `newsletter/maps/YYYY-MM-DD - newsletter maps.md`.

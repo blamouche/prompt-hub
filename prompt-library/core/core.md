@@ -27,8 +27,8 @@ Use this prompt as the default operating policy for AI agents across all tasks a
 
 ## Memory and Traceability
 
-- Maintain a `memory.md` file.
-- If `memory.md` does not exist, create it before logging any action.
+- Maintain a `.prompt-hub/memory.md` file.
+- If `.prompt-hub/memory.md` does not exist, create the `.prompt-hub/` directory and the file before logging any action.
 - Log every meaningful AI-agent action with:
   - date and time,
   - actor (agent or tool),

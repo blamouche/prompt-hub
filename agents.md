@@ -1,6 +1,12 @@
+Version: 0.3.11
+
 # Agents
 
 Merged prompt content from app, core, and selected domain file(s).
+
+## Source: `./.prompt-hub/app/prompt-hub.md`
+
+
 
 ## Source: `./.prompt-hub/app/README.md`
 
@@ -37,8 +43,8 @@ Use this prompt as the default operating policy for AI agents across all tasks a
 
 ## Memory and Traceability
 
-- Maintain a `memory.md` file.
-- If `memory.md` does not exist, create it before logging any action.
+- Maintain a `.prompt-hub/memory.md` file.
+- If `.prompt-hub/memory.md` does not exist, create the `.prompt-hub/` directory and the file before logging any action.
 - Log every meaningful AI-agent action with:
   - date and time,
   - actor (agent or tool),
@@ -105,12 +111,12 @@ Use this prompt for software application development tasks across web, mobile, b
 
 ## Versioning and Commits
 
-- Maintain a 3-part version file named `version.md` using `X.X.X`.
-- If `version.md` does not exist, create it before version updates.
+- Maintain a 3-part version file at `.prompt-hub/version.md` using `X.X.X`.
+- If `.prompt-hub/version.md` does not exist, create the `.prompt-hub/` directory and the file before version updates.
 - `X.0.0` is created only on explicit user request.
 - `0.X.0` is created automatically when a new branch is created.
 - `0.0.X` is incremented on every commit.
-- Maintain a changelog file named `releases.md`; create it if it does not exist.
+- Maintain a changelog file at `.prompt-hub/releases.md`; create it if it does not exist.
 - For each version in `releases.md`, list the functional evolutions and/or fixes delivered.
 - Each meaningful agent development action must result in a commit.
 - After each commit, push the commit to the remote branch.

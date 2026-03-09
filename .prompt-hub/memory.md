@@ -431,3 +431,11 @@
   commands_executed: Edit (registry + agent section)
   outcome_status: success
   next_relevant_step: Commit and push the newsletter-maps-agent addition.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Migrated user-owned traceability files (version.md, releases.md, memory.md) from project root to .prompt-hub/; updated core.md and app-development.md to reference .prompt-hub/ paths; updated installer with migration step and update-protection comment.
+  files_changed: prompt-library/core/core.md, prompt-library/domain/app-development.md, install-prompt-hub.sh, .prompt-hub/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  commands_executed: Edit, mv (migration of root files)
+  outcome_status: success
+  next_relevant_step: Commit and push.

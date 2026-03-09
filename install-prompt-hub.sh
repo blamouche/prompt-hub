@@ -65,9 +65,23 @@ echo "Prompt Hub version: $PROMPT_HUB_VERSION"
 
 mkdir -p "$TARGET_DIR"
 
+# Migrate legacy root-level user files to .prompt-hub/ if they exist.
+for legacy_file in memory.md version.md releases.md; do
+  if [[ -f "$PWD/$legacy_file" ]]; then
+    dest="$TARGET_DIR/$legacy_file"
+    if [[ ! -f "$dest" ]]; then
+      mv "$PWD/$legacy_file" "$dest"
+      echo "Migrated $legacy_file → $TARGET_DIR/$legacy_file"
+    else
+      echo "Warning: $legacy_file exists at root and in $TARGET_DIR — keeping $TARGET_DIR version, skipping root file." >&2
+    fi
+  fi
+done
+
 # Update strategy:
 # - core/domain: replace entirely from source.
 # - app: merge from source; replace files with identical relative paths and keep other local files unchanged.
+# - memory.md, version.md, releases.md in TARGET_DIR are never touched (user-owned files).
 for section in core domain; do
   SRC_SECTION_DIR="$SRC_DIR/$section"
   TARGET_SECTION_DIR="$TARGET_DIR/$section"
