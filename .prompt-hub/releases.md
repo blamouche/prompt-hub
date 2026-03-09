@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.30 - 2026-03-09
+
+- chore: remove hello.html.
+
 ## 0.3.29 - 2026-03-09
 
 - fix(installer): version was always "unknown" — read from `$SRC_DIR/version.md` (`prompt-library/version.md`) instead of wrong parent directory.

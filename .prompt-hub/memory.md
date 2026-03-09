@@ -1,5 +1,12 @@
 # Memory Log
 
+- date_time: 2026-03-09 00:04:00 CET
+  actor: agent
+  action_summary: Deleted hello.html, bumped version to 0.3.30.
+  files_changed: hello.html (deleted), .prompt-hub/version.md, prompt-library/version.md, .prompt-hub/releases.md
+  outcome_status: success
+  next_relevant_step: Commit and push.
+
 - date_time: 2026-03-09 00:03:00 CET
   actor: agent
   action_summary: Fixed installer version always being "unknown" — was reading from wrong directory (parent of prompt-library instead of prompt-library itself). Bumped to 0.3.29.
