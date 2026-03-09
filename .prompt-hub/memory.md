@@ -543,3 +543,11 @@
   commands_executed: Write, Edit
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Added daily auto-update check instructions to notice.md and PROMPT_HUB_DOMAINS non-interactive mode to installer.
+  files_changed: prompt-library/notice.md, .prompt-hub/notice.md, install-prompt-hub.sh, .prompt-hub/version.md, .prompt-hub/releases.md, prompt-library/version.md, .prompt-hub/memory.md
+  commands_executed: Write, Edit, bash -n (syntax check), cp
+  outcome_status: success
+  next_relevant_step: Commit and push.

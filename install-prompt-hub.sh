@@ -122,32 +122,50 @@ if [[ ${#domain_files[@]} -eq 0 ]]; then
   exit 1
 fi
 
-echo ""
-echo "Choose one or more domain files to use:"
-for i in "${!domain_files[@]}"; do
-  printf "%d) %s\n" "$((i + 1))" "${domain_files[$i]}"
-done
-
-action_choice=""
 selected_indices=()
-while true; do
-  read -r -p "Enter choice(s) [1-${#domain_files[@]}] (comma/space separated): " action_choice
-  selected_indices=()
-  is_valid=true
-  normalized_choice="${action_choice//,/ }"
-  for token in $normalized_choice; do
-    if [[ ! "$token" =~ ^[0-9]+$ ]] || (( token < 1 || token > ${#domain_files[@]} )); then
-      is_valid=false
-      break
-    fi
-    selected_indices+=("$token")
+
+# Non-interactive mode: PROMPT_HUB_DOMAINS can be a comma/space-separated list of domain filenames.
+if [[ -n "${PROMPT_HUB_DOMAINS:-}" ]]; then
+  normalized_domains="${PROMPT_HUB_DOMAINS//,/ }"
+  for domain_name in $normalized_domains; do
+    for i in "${!domain_files[@]}"; do
+      if [[ "${domain_files[$i]}" == "$domain_name" ]]; then
+        selected_indices+=("$((i + 1))")
+        break
+      fi
+    done
+  done
+  if [[ ${#selected_indices[@]} -eq 0 ]]; then
+    echo "Error: PROMPT_HUB_DOMAINS='${PROMPT_HUB_DOMAINS}' matched no available domain files." >&2
+    exit 1
+  fi
+else
+  echo ""
+  echo "Choose one or more domain files to use:"
+  for i in "${!domain_files[@]}"; do
+    printf "%d) %s\n" "$((i + 1))" "${domain_files[$i]}"
   done
 
-  if [[ "$is_valid" == "true" && ${#selected_indices[@]} -gt 0 ]]; then
-    break
-  fi
-  echo "Invalid choice. Enter one or more numbers between 1 and ${#domain_files[@]}, separated by commas or spaces."
-done
+  action_choice=""
+  while true; do
+    read -r -p "Enter choice(s) [1-${#domain_files[@]}] (comma/space separated): " action_choice
+    selected_indices=()
+    is_valid=true
+    normalized_choice="${action_choice//,/ }"
+    for token in $normalized_choice; do
+      if [[ ! "$token" =~ ^[0-9]+$ ]] || (( token < 1 || token > ${#domain_files[@]} )); then
+        is_valid=false
+        break
+      fi
+      selected_indices+=("$token")
+    done
+
+    if [[ "$is_valid" == "true" && ${#selected_indices[@]} -gt 0 ]]; then
+      break
+    fi
+    echo "Invalid choice. Enter one or more numbers between 1 and ${#domain_files[@]}, separated by commas or spaces."
+  done
+fi
 
 CORE_FILE="$TARGET_DIR/core/core.md"
 SELECTED_DOMAIN_FILES=()

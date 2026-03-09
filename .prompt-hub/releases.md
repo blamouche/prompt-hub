@@ -1,5 +1,10 @@
 # Releases
 
+## 0.3.25 - 2026-03-09
+
+- feat: added daily auto-update check instructions to notice.md — agent checks remote version once per day and runs silent update preserving current domain selection.
+- feat: added `PROMPT_HUB_DOMAINS` non-interactive mode to installer.
+
 ## 0.3.24 - 2026-03-09
 
 - refactor(core): restructured core.md for logical flow; moved Core Principles up, merged Planning into Task Management with .prompt-hub/ file references, moved Output Contract to end.
