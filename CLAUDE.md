@@ -26,8 +26,8 @@ At every session start, silently run the following steps before anything else:
 3. Fetch the latest version: `curl -fsSL "https://raw.githubusercontent.com/${REPO}/${REF}/prompt-library/version.md"`
    - If the fetch fails, stop silently (network unavailable or private repo).
 
-4. Compare the fetched version string to `.prompt-hub/version.md`.
-   - If the remote version is equal to or older than the local version, stop silently.
+4. Compare the fetched version string to `.prompt-hub/prompt-hub-version.md`.
+   - If the remote version is equal to or older than the installed version, stop silently.
 
 5. A newer version is available. Run a silent update:
    a. Record current domain filenames: `ls .prompt-hub/domain/*.md | xargs -n1 basename`
