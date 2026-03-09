@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.21 - 2026-03-09
+
+- feat: added Verification Before Done, Demand Elegance, Autonomous Bug Fixing, and Task Management sections to app-development domain prompt.
+
 ## 0.3.20 - 2026-03-09
 
 - Cleanup: deleted all HTML files from project root (`helloworld.html`, `helloworld2.html`, `helloworld3.html`).

@@ -54,6 +54,29 @@ Use this prompt for software application development tasks across web, mobile, b
 - Record key decisions, assumptions, and tradeoffs in concise notes.
 - Ensure another engineer can understand what changed and why without extra context.
 
+## Verification Before Done
+
+- Diff behavior between main and your changes when relevant.
+- Run tests, check logs, demonstrate correctness before marking work complete.
+
+## Demand Elegance
+
+- If a fix feels hacky, apply the principle: "Knowing everything I know now, implement the elegant solution."
+- Never settle for a workaround when a clean solution is achievable.
+
+## Autonomous Bug Fixing
+
+- When given a bug report: just fix it. Do not ask for hand-holding.
+- Point at logs, errors, and failing tests — then resolve them.
+- Zero context switching required from the user.
+- Go fix failing CI tests without being told how.
+
+## Task Management
+
+- Write plan to `tasks/todo.md`.
+- Add a review section to `tasks/todo.md` when done.
+- Update `tasks/lessons.md` after corrections.
+
 ## Completion Contract
 
 - Deliver:

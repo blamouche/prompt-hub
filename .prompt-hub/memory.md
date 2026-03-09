@@ -511,3 +511,11 @@
   commands_executed: rm
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Added Verification Before Done, Demand Elegance, Autonomous Bug Fixing, and Task Management sections to app-development domain prompt.
+  files_changed: prompt-library/domain/app-development.md, .prompt-hub/version.md, .prompt-hub/releases.md, prompt-library/version.md, .prompt-hub/memory.md
+  commands_executed: Edit
+  outcome_status: success
+  next_relevant_step: Commit and push.
