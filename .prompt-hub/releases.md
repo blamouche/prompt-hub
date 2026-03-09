@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.14 - 2026-03-09
+
+- Functional evolution: added `helloworld.html` at project root with a basic Hello World HTML page.
+
 ## 0.3.13 - 2026-03-09
 
 - Documentation: rewrote `prompt-library/app/README.md` to explain that custom project-specific prompts can be placed in `.prompt-hub/app/`, are preserved across updates, and require re-running the installer to take effect.
