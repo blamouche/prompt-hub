@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.17 - 2026-03-09
+
+- Fix: installer no longer includes `## Source: ...` headers when concatenating prompts into `agents.md`; only file content is appended.
+
 ## 0.3.16 - 2026-03-09
 
 - Functional evolution: added version sync rule in `.prompt-hub/app/prompt-hub.md` to keep `prompt-library/version.md` in sync with `.prompt-hub/version.md` on every update.

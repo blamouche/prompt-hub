@@ -174,11 +174,7 @@ done
 
 append_file_to_agents() {
   local file_path="$1"
-  local relative_path
-  relative_path="./${file_path#"$PWD"/}"
   {
-    echo "## Source: \`$relative_path\`"
-    echo ""
     cat "$file_path"
     echo ""
     echo ""

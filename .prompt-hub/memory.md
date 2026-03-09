@@ -479,3 +479,11 @@
   commands_executed: Write, cp, Edit
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Removed ## Source headers from installer prompt concatenation; agents.md now contains only file contents without source annotations.
+  files_changed: install-prompt-hub.sh, prompt-library/version.md, .prompt-hub/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  commands_executed: Edit, bash -n
+  outcome_status: success
+  next_relevant_step: Commit and push.
