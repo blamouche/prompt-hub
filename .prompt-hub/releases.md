@@ -1,5 +1,10 @@
 # Releases
 
+## 0.3.18 - 2026-03-09
+
+- Functional evolution: extracted MANDATORY COMPLIANCE NOTICE from installer script into `prompt-library/notice.md`.
+- Functional evolution: installer now copies `notice.md` to `.prompt-hub/notice.md` and reads it when generating `agents.md`.
+
 ## 0.3.17 - 2026-03-09
 
 - Fix: installer no longer includes `## Source: ...` headers when concatenating prompts into `agents.md`; only file content is appended.

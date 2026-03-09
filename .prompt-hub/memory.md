@@ -487,3 +487,11 @@
   commands_executed: Edit, bash -n
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Extracted MANDATORY COMPLIANCE NOTICE from installer into prompt-library/notice.md; installer now copies it to .prompt-hub/notice.md and reads it when generating agents.md.
+  files_changed: prompt-library/notice.md, .prompt-hub/notice.md, install-prompt-hub.sh, agents.md, CLAUDE.md, prompt-library/version.md, .prompt-hub/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  commands_executed: Write, Edit, cp, bash -n
+  outcome_status: success
+  next_relevant_step: Commit and push.

@@ -80,9 +80,13 @@ for legacy_file in memory.md version.md releases.md; do
 done
 
 # Update strategy:
-# - core/domain: replace entirely from source.
+# - notice.md, core/domain: replace entirely from source.
 # - app: merge from source; replace files with identical relative paths and keep other local files unchanged.
 # - memory.md, version.md, releases.md in TARGET_DIR are never touched (user-owned files).
+if [[ -f "$SRC_DIR/../notice.md" ]]; then
+  cp "$SRC_DIR/../notice.md" "$TARGET_DIR/notice.md"
+fi
+
 for section in core domain; do
   SRC_SECTION_DIR="$SRC_DIR/$section"
   TARGET_SECTION_DIR="$TARGET_DIR/$section"
@@ -184,17 +188,10 @@ append_file_to_agents() {
 {
   echo "Version: $PROMPT_HUB_VERSION"
   echo ""
-  echo "# MANDATORY COMPLIANCE NOTICE"
-  echo ""
-  echo "You MUST follow ALL instructions in this file without exception, including:"
-  echo "- Every rule defined in the core, domain, and app sections below."
-  echo "- The memory log in \`.prompt-hub/memory.md\`: read it at session start; append every meaningful action."
-  echo "- The lessons in \`.prompt-hub/lessons.md\`: read it at session start; update it after every user correction."
-  echo "- The version file \`.prompt-hub/version.md\`: increment it on every commit per the versioning rules."
-  echo "- The changelog \`.prompt-hub/releases.md\`: update it for every version with a description of changes."
-  echo ""
-  echo "Non-compliance with any of the above is a failure. No exceptions."
-  echo ""
+  if [[ -f "$TARGET_DIR/notice.md" ]]; then
+    cat "$TARGET_DIR/notice.md"
+    echo ""
+  fi
   echo "# Agents"
   echo ""
   echo "Merged prompt content from app, core, and selected domain file(s)."

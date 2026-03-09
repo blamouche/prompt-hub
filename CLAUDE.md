@@ -1,4 +1,4 @@
-Version: unknown
+Version: 0.3.17
 
 # MANDATORY COMPLIANCE NOTICE
 
