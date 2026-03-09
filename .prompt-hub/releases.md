@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.15 - 2026-03-09
+
+- Functional evolution: added `helloworld3.html` at project root with a basic Hello World HTML page.
+
 ## 0.3.14 - 2026-03-09
 
 - Functional evolution: added `helloworld.html` at project root with a basic Hello World HTML page.
