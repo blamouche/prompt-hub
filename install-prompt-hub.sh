@@ -198,7 +198,7 @@ TARGET_APP_DIR="$TARGET_DIR/app"
 if [[ -d "$TARGET_APP_DIR" ]]; then
   while IFS= read -r app_file; do
     append_file_to_agents "$app_file"
-  done < <(find "$TARGET_APP_DIR" -type f | sort)
+  done < <(find "$TARGET_APP_DIR" -type f ! -iname "README.md" | sort)
 fi
 
 while IFS= read -r core_file; do
