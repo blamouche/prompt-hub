@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.28 - 2026-03-09
+
+- fix(installer): separate prompt-hub version tracking from local repo version — installer now writes `.prompt-hub/prompt-hub-version.md`; auto-update check compares against that file instead of `.prompt-hub/version.md`.
+
 ## 0.3.27 - 2026-03-09
 
 - fix(installer): create `.prompt-hub/version.md` on first install so auto-update check has a baseline version.

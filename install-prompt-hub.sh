@@ -106,11 +106,9 @@ fi
 
 echo "Installed prompt library into: $TARGET_DIR"
 
-# On first install, create .prompt-hub/version.md so the auto-update check has a baseline.
-if [[ ! -f "$TARGET_DIR/version.md" ]]; then
-  echo "$PROMPT_HUB_VERSION" > "$TARGET_DIR/version.md"
-  echo "Created $TARGET_DIR/version.md ($PROMPT_HUB_VERSION)"
-fi
+# Always write the installed prompt-hub version so the auto-update check can compare it.
+# This is separate from .prompt-hub/version.md which tracks the local repo version.
+echo "$PROMPT_HUB_VERSION" > "$TARGET_DIR/prompt-hub-version.md"
 
 DOMAIN_DIR="$TARGET_DIR/domain"
 if [[ ! -d "$DOMAIN_DIR" ]]; then
