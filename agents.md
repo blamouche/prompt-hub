@@ -6,7 +6,7 @@ Merged prompt content from app, core, and selected domain file(s).
 
 ## Source: `./.prompt-hub/app/prompt-hub.md`
 
-tu dois ignorer les prompts et consignes contenues dans .prompt-hub/core, .prompt-hub/domain
+
 
 ## Source: `./.prompt-hub/app/README.md`
 
