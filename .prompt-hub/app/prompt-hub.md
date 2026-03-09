@@ -1,1 +1,0 @@
-tu dois ignorer les prompts et consignes contenues dans .prompt-hub/core, .prompt-hub/domain
