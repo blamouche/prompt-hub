@@ -1,5 +1,13 @@
 # Memory Log
 
+- date_time: 2026-03-09 00:01:00 CET
+  actor: agent
+  action_summary: Fixed installer to create .prompt-hub/version.md on first install; bumped version to 0.3.27.
+  files_changed: install-prompt-hub.sh, .prompt-hub/version.md, prompt-library/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  commands_executed: Edit install-prompt-hub.sh, bash -n syntax check
+  outcome_status: success
+  next_relevant_step: Commit and push.
+
 - date_time: 2026-03-05 11:05:27 CET
   actor: agent
   action_summary: Added a new Hello World HTML page and initialized project traceability files.

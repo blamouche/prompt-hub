@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.27 - 2026-03-09
+
+- fix(installer): create `.prompt-hub/version.md` on first install so auto-update check has a baseline version.
+
 ## 0.3.26 - 2026-03-09
 
 - feat: added hello.html Hello World page.

@@ -106,6 +106,12 @@ fi
 
 echo "Installed prompt library into: $TARGET_DIR"
 
+# On first install, create .prompt-hub/version.md so the auto-update check has a baseline.
+if [[ ! -f "$TARGET_DIR/version.md" ]]; then
+  echo "$PROMPT_HUB_VERSION" > "$TARGET_DIR/version.md"
+  echo "Created $TARGET_DIR/version.md ($PROMPT_HUB_VERSION)"
+fi
+
 DOMAIN_DIR="$TARGET_DIR/domain"
 if [[ ! -d "$DOMAIN_DIR" ]]; then
   echo "Error: domain directory not found in $TARGET_DIR." >&2
