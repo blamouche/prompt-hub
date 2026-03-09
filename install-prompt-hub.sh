@@ -1,6 +1,44 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# ── Colors & styles ──────────────────────────────────────────────────────────
+if [[ -t 1 ]]; then
+  BOLD="\033[1m"
+  DIM="\033[2m"
+  CYAN="\033[36m"
+  GREEN="\033[32m"
+  YELLOW="\033[33m"
+  RED="\033[31m"
+  MAGENTA="\033[35m"
+  RESET="\033[0m"
+else
+  BOLD="" DIM="" CYAN="" GREEN="" YELLOW="" RED="" MAGENTA="" RESET=""
+fi
+
+info()    { echo -e "  ${CYAN}${BOLD}→${RESET}  $*"; }
+success() { echo -e "  ${GREEN}${BOLD}✔${RESET}  $*"; }
+warn()    { echo -e "  ${YELLOW}${BOLD}!${RESET}  $*" >&2; }
+error()   { echo -e "  ${RED}${BOLD}✘${RESET}  $*" >&2; }
+step()    { echo -e "\n${BOLD}${MAGENTA}▸ $*${RESET}"; }
+
+# ── Banner ───────────────────────────────────────────────────────────────────
+echo -e ""
+echo -e "${CYAN}${BOLD}  ██████╗ ██████╗  ██████╗ ███╗   ███╗██████╗ ████████╗${RESET}"
+echo -e "${CYAN}${BOLD}  ██╔══██╗██╔══██╗██╔═══██╗████╗ ████║██╔══██╗╚══██╔══╝${RESET}"
+echo -e "${CYAN}${BOLD}  ██████╔╝██████╔╝██║   ██║██╔████╔██║██████╔╝   ██║   ${RESET}"
+echo -e "${CYAN}${BOLD}  ██╔═══╝ ██╔══██╗██║   ██║██║╚██╔╝██║██╔═══╝    ██║   ${RESET}"
+echo -e "${CYAN}${BOLD}  ██║     ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║        ██║   ${RESET}"
+echo -e "${CYAN}${BOLD}  ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝        ╚═╝   ${RESET}"
+echo -e "${CYAN}${BOLD}  ██╗  ██╗██╗   ██╗██████╗ ${RESET}"
+echo -e "${CYAN}${BOLD}  ██║  ██║██║   ██║██╔══██╗${RESET}"
+echo -e "${CYAN}${BOLD}  ███████║██║   ██║██████╔╝${RESET}"
+echo -e "${CYAN}${BOLD}  ██╔══██║██║   ██║██╔══██╗${RESET}"
+echo -e "${CYAN}${BOLD}  ██║  ██║╚██████╔╝██████╔╝${RESET}"
+echo -e "${CYAN}${BOLD}  ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ${RESET}"
+echo -e "${DIM}  AI Agent Prompt Library Installer${RESET}"
+echo -e ""
+
+# ── Config ───────────────────────────────────────────────────────────────────
 REPO_OWNER_REPO="${PROMPT_HUB_REPO:-blamouche/prompt-hub}"
 REPO_REF="${PROMPT_HUB_REF:-main}"
 REPO_ARCHIVE_URL="${PROMPT_HUB_ARCHIVE_URL:-https://codeload.github.com/${REPO_OWNER_REPO}/tar.gz/refs/heads/${REPO_REF}}"
@@ -10,15 +48,16 @@ AGENT_FILE="${PWD}/agents.md"
 CLAUDE_FILE="${PWD}/CLAUDE.md"
 
 TMP_DIR="$(mktemp -d)"
-cleanup() {
-  rm -rf "$TMP_DIR"
-}
+cleanup() { rm -rf "$TMP_DIR"; }
 trap cleanup EXIT
+
+# ── Download ─────────────────────────────────────────────────────────────────
+step "Downloading prompt-library"
 
 SRC_DIR=""
 PROMPT_HUB_VERSION="unknown"
-echo "Downloading prompt-library..."
 download_failed=false
+
 if [[ -n "$GITHUB_TOKEN" ]]; then
   if curl -fsSL \
     -H "Authorization: Bearer ${GITHUB_TOKEN}" \
@@ -37,19 +76,18 @@ else
 fi
 
 if [[ "$download_failed" == "true" && -z "$GITHUB_TOKEN" ]]; then
-  echo "Download failed. If the repository is private, set PROMPT_HUB_GITHUB_TOKEN (or GITHUB_TOKEN)." >&2
+  error "Download failed. If the repository is private, set PROMPT_HUB_GITHUB_TOKEN (or GITHUB_TOKEN)."
 fi
-
 if [[ "$download_failed" == "true" && -n "$GITHUB_TOKEN" ]]; then
-  echo "Download failed with provided token. Check token scope and repository access." >&2
+  error "Download failed with provided token. Check token scope and repository access."
 fi
 
 if [[ -z "${SRC_DIR}" || ! -d "${SRC_DIR}" ]]; then
   if [[ -d "${PWD}/prompt-library" ]]; then
-    echo "Download unavailable, using local prompt-library as fallback."
+    warn "Download unavailable — using local prompt-library as fallback."
     SRC_DIR="${PWD}/prompt-library"
   else
-    echo "Error: prompt-library not found in downloaded archive and no local fallback available." >&2
+    error "prompt-library not found in downloaded archive and no local fallback available."
     exit 1
   fi
 fi
@@ -57,11 +95,12 @@ fi
 if [[ -f "$SRC_DIR/version.md" ]]; then
   PROMPT_HUB_VERSION="$(head -n 1 "$SRC_DIR/version.md" | tr -d '[:space:]')"
 fi
-if [[ -z "$PROMPT_HUB_VERSION" ]]; then
-  PROMPT_HUB_VERSION="unknown"
-fi
+[[ -z "$PROMPT_HUB_VERSION" ]] && PROMPT_HUB_VERSION="unknown"
 
-echo "Prompt Hub version: $PROMPT_HUB_VERSION"
+success "Prompt Hub ${BOLD}v${PROMPT_HUB_VERSION}${RESET}"
+
+# ── Install files ─────────────────────────────────────────────────────────────
+step "Installing prompt library"
 
 mkdir -p "$TARGET_DIR"
 
@@ -71,17 +110,17 @@ for legacy_file in memory.md version.md releases.md; do
     dest="$TARGET_DIR/$legacy_file"
     if [[ ! -f "$dest" ]]; then
       mv "$PWD/$legacy_file" "$dest"
-      echo "Migrated $legacy_file → $TARGET_DIR/$legacy_file"
+      info "Migrated ${legacy_file} → .prompt-hub/${legacy_file}"
     else
-      echo "Warning: $legacy_file exists at root and in $TARGET_DIR — keeping $TARGET_DIR version, skipping root file." >&2
+      warn "${legacy_file} exists at root and in .prompt-hub/ — keeping .prompt-hub/ version."
     fi
   fi
 done
 
 # Update strategy:
 # - notice.md, core/domain: replace entirely from source.
-# - app: merge from source; replace files with identical relative paths and keep other local files unchanged.
-# - memory.md, version.md, releases.md in TARGET_DIR are never touched (user-owned files).
+# - app: merge from source; replace files with identical relative paths.
+# - memory.md, version.md, releases.md in TARGET_DIR are never touched (user-owned).
 if [[ -f "$SRC_DIR/notice.md" ]]; then
   cp "$SRC_DIR/notice.md" "$TARGET_DIR/notice.md"
 fi
@@ -103,15 +142,18 @@ if [[ -d "$SRC_APP_DIR" ]]; then
   cp -R "$SRC_APP_DIR"/. "$TARGET_APP_DIR"/
 fi
 
-echo "Installed prompt library into: $TARGET_DIR"
-
 # Always write the installed prompt-hub version so the auto-update check can compare it.
 # This is separate from .prompt-hub/version.md which tracks the local repo version.
 echo "$PROMPT_HUB_VERSION" > "$TARGET_DIR/prompt-hub-version.md"
 
+success "Installed into ${DIM}${TARGET_DIR}${RESET}"
+
+# ── Domain selection ──────────────────────────────────────────────────────────
+step "Selecting domains"
+
 DOMAIN_DIR="$TARGET_DIR/domain"
 if [[ ! -d "$DOMAIN_DIR" ]]; then
-  echo "Error: domain directory not found in $TARGET_DIR." >&2
+  error "Domain directory not found at ${DOMAIN_DIR}."
   exit 1
 fi
 
@@ -121,7 +163,7 @@ while IFS= read -r file; do
 done < <(find "$DOMAIN_DIR" -maxdepth 1 -type f -name '*.md' | sort)
 
 if [[ ${#domain_files[@]} -eq 0 ]]; then
-  echo "Error: no domain markdown files found in $DOMAIN_DIR." >&2
+  error "No domain markdown files found in ${DOMAIN_DIR}."
   exit 1
 fi
 
@@ -139,19 +181,21 @@ if [[ -n "${PROMPT_HUB_DOMAINS:-}" ]]; then
     done
   done
   if [[ ${#selected_indices[@]} -eq 0 ]]; then
-    echo "Error: PROMPT_HUB_DOMAINS='${PROMPT_HUB_DOMAINS}' matched no available domain files." >&2
+    error "PROMPT_HUB_DOMAINS='${PROMPT_HUB_DOMAINS}' matched no available domain files."
     exit 1
   fi
 else
   echo ""
-  echo "Choose one or more domain files to use:"
+  echo -e "  ${BOLD}Available domains:${RESET}"
   for i in "${!domain_files[@]}"; do
-    printf "%d) %s\n" "$((i + 1))" "${domain_files[$i]}"
+    printf "    ${CYAN}%d)${RESET} %s\n" "$((i + 1))" "${domain_files[$i]}"
   done
+  echo ""
 
   action_choice=""
   while true; do
-    read -r -p "Enter choice(s) [1-${#domain_files[@]}] (comma/space separated): " action_choice
+    printf "  ${BOLD}Choose domain(s)${RESET} ${DIM}[1-${#domain_files[@]}, comma/space separated]${RESET}: "
+    read -r action_choice
     selected_indices=()
     is_valid=true
     normalized_choice="${action_choice//,/ }"
@@ -166,7 +210,7 @@ else
     if [[ "$is_valid" == "true" && ${#selected_indices[@]} -gt 0 ]]; then
       break
     fi
-    echo "Invalid choice. Enter one or more numbers between 1 and ${#domain_files[@]}, separated by commas or spaces."
+    warn "Invalid choice — enter numbers between 1 and ${#domain_files[@]}."
   done
 fi
 
@@ -182,7 +226,7 @@ for selected_index in "${selected_indices[@]}"; do
 done
 
 if [[ ! -f "$CORE_FILE" ]]; then
-  echo "Error: core file not found at $CORE_FILE." >&2
+  error "Core file not found at ${CORE_FILE}."
   exit 1
 fi
 
@@ -196,6 +240,9 @@ for domain_file in "${domain_files[@]}"; do
     rm -f "$DOMAIN_DIR/$domain_file"
   fi
 done
+
+# ── Build agent files ─────────────────────────────────────────────────────────
+step "Building agent files"
 
 append_file_to_agents() {
   local file_path="$1"
@@ -219,7 +266,6 @@ append_file_to_agents() {
   echo ""
 } > "$AGENT_FILE"
 
-TARGET_APP_DIR="$TARGET_DIR/app"
 if [[ -d "$TARGET_APP_DIR" ]]; then
   while IFS= read -r app_file; do
     append_file_to_agents "$app_file"
@@ -245,23 +291,28 @@ done
 
 cp "$AGENT_FILE" "$CLAUDE_FILE"
 
-echo ""
-echo "Created: $AGENT_FILE"
-echo "Created: $CLAUDE_FILE"
-echo "Using domains: $selected_domains_display"
-echo "Removed unselected domain files from: $DOMAIN_DIR"
+success "agents.md"
+success "CLAUDE.md"
+info   "Domains: ${BOLD}${selected_domains_display}${RESET}"
 
+# ── Git commit ────────────────────────────────────────────────────────────────
 if git -C "$PWD" rev-parse --is-inside-work-tree &>/dev/null; then
+  step "Committing"
   git -C "$PWD" add \
     "$TARGET_DIR" \
     "$AGENT_FILE" \
     "$CLAUDE_FILE"
   if ! git -C "$PWD" diff --cached --quiet; then
     git -C "$PWD" commit -m "Install/update prompt-hub $PROMPT_HUB_VERSION (domains: $selected_domains_display)"
-    echo "Committed prompt-hub install."
+    success "Committed."
   else
-    echo "Nothing to commit (no changes detected)."
+    info "Nothing to commit (no changes detected)."
   fi
 else
-  echo "Not a git repository — skipping commit."
+  info "Not a git repository — skipping commit."
 fi
+
+# ── Done ──────────────────────────────────────────────────────────────────────
+echo ""
+echo -e "${GREEN}${BOLD}  ✔ Prompt Hub v${PROMPT_HUB_VERSION} installed successfully!${RESET}"
+echo ""
