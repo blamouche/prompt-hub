@@ -1,5 +1,12 @@
 # Memory Log
 
+- date_time: 2026-03-09 00:06:00 CET
+  actor: agent
+  action_summary: Created feature/pretty-installer branch. Rewrote installer with ASCII banner, colors, step indicators. Bumped to 0.4.0.
+  files_changed: install-prompt-hub.sh, .prompt-hub/version.md, prompt-library/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  outcome_status: success
+  next_relevant_step: Commit and push branch.
+
 - date_time: 2026-03-09 00:05:00 CET
   actor: agent
   action_summary: Changed todo behavior — per-task files in .prompt-hub/todo/todo-<slug>.md instead of shared todo.md. Updated core.md and app-development.md. Bumped to 0.3.31.

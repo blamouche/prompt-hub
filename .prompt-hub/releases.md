@@ -1,5 +1,9 @@
 # Releases
 
+## 0.4.0 - 2026-03-09
+
+- feat(installer): pretty output — ASCII art banner, colored sections, step indicators, success/error/warn icons.
+
 ## 0.3.31 - 2026-03-09
 
 - feat(core): per-task todo files — each task gets its own `.prompt-hub/todo/todo-<slug>.md` instead of a shared `todo.md`.
