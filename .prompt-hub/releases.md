@@ -1,5 +1,10 @@
 # Releases
 
+## 0.3.16 - 2026-03-09
+
+- Functional evolution: added version sync rule in `.prompt-hub/app/prompt-hub.md` to keep `prompt-library/version.md` in sync with `.prompt-hub/version.md` on every update.
+- Functional evolution: created `prompt-library/version.md` as initial synced copy.
+
 ## 0.3.15 - 2026-03-09
 
 - Functional evolution: added `helloworld3.html` at project root with a basic Hello World HTML page.

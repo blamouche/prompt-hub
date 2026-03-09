@@ -471,3 +471,11 @@
   commands_executed: Write, Edit
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-09 CET
+  actor: agent
+  action_summary: Added version sync rule in .prompt-hub/app/prompt-hub.md to copy .prompt-hub/version.md to prompt-library/version.md on every version update; created prompt-library/version.md as initial synced copy.
+  files_changed: .prompt-hub/app/prompt-hub.md, prompt-library/version.md, .prompt-hub/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  commands_executed: Write, cp, Edit
+  outcome_status: success
+  next_relevant_step: Commit and push.
