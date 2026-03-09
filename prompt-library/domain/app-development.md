@@ -10,8 +10,8 @@ Use this prompt for software application development tasks across web, mobile, b
 
 ## Task Management
 
-- Write plan to `.prompt-hub/todo.md` before starting any non-trivial task.
-- Add a review section to `.prompt-hub/todo.md` when done.
+- Write plan to `.prompt-hub/todo/todo-<slug>.md` before starting any non-trivial task.
+- Add a review section to the task's todo file when done.
 - Update `.prompt-hub/lessons.md` after corrections.
 
 ## Scope and Clarification

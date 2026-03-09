@@ -1,5 +1,12 @@
 # Memory Log
 
+- date_time: 2026-03-09 00:05:00 CET
+  actor: agent
+  action_summary: Changed todo behavior — per-task files in .prompt-hub/todo/todo-<slug>.md instead of shared todo.md. Updated core.md and app-development.md. Bumped to 0.3.31.
+  files_changed: prompt-library/core/core.md, prompt-library/domain/app-development.md, prompt-library/version.md, .prompt-hub/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md
+  outcome_status: success
+  next_relevant_step: Reinstall to regenerate CLAUDE.md, commit and push.
+
 - date_time: 2026-03-09 00:04:00 CET
   actor: agent
   action_summary: Deleted hello.html, bumped version to 0.3.30.

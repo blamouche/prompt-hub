@@ -1,5 +1,9 @@
 # Releases
 
+## 0.3.31 - 2026-03-09
+
+- feat(core): per-task todo files — each task gets its own `.prompt-hub/todo/todo-<slug>.md` instead of a shared `todo.md`.
+
 ## 0.3.30 - 2026-03-09
 
 - chore: remove hello.html.
