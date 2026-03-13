@@ -1,5 +1,9 @@
 # Releases
 
+## 0.4.5 - 2026-03-13
+
+- feat(core): added mandatory "Before You Act" pre-work block to Task Management — agents must read `lessons.md`, `memory.md`, `releases.md` and create the task file before starting any work.
+
 ## 0.4.4 - 2026-03-13
 
 - docs(README): added Prompt Hub logo image at the top center of README.md.
