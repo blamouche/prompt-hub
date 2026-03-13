@@ -1,5 +1,9 @@
 # Releases
 
+## 0.4.6 - 2026-03-13
+
+- feat(app): added "Lesson-Driven Prompt Correction" rule — whenever a lesson is learned, the relevant `prompt-library/` files must be updated to prevent recurrence before the lesson is considered closed.
+
 ## 0.4.5 - 2026-03-13
 
 - feat(core): added mandatory "Before You Act" pre-work block to Task Management — agents must read `lessons.md`, `memory.md`, `releases.md` and create the task file before starting any work.
