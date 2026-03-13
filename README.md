@@ -1,5 +1,9 @@
 # Prompt Hub
 
+<p align="center">
+  <img src="prompt-hub.png" alt="Prompt Hub" width="120" />
+</p>
+
 Prompt Hub is an AI agent prompt library and installer. It distributes a curated set of reusable prompts into any project directory, generating a single merged prompt file (`agents.md` / `CLAUDE.md`) that Claude Code and other AI agents read as their operating policy.
 
 ---

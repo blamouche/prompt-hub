@@ -1,5 +1,9 @@
 # Releases
 
+## 0.4.4 - 2026-03-13
+
+- docs(README): added Prompt Hub logo image at the top center of README.md.
+
 ## 0.4.3 - 2026-03-13
 
 - feat(core): todo filename format updated to `todo-<timestamp>-<slug>.md` (timestamp: `YYYYMMDD-HHmmss`) in core.md and app-development.md for better chronological ordering.
