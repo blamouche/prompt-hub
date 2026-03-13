@@ -610,3 +610,11 @@
   commands_executed: Write, Edit
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-13 CET
+  actor: agent
+  action_summary: Fixed README — removed incorrect mention of prompt-hub.md from prompt-library/app/ source structure; that file is repo-specific, not distributed. Bumped to 0.4.2.
+  files_changed: README.md, .prompt-hub/version.md, .prompt-hub/releases.md, prompt-library/version.md, .prompt-hub/memory.md
+  commands_executed: Edit
+  outcome_status: success
+  next_relevant_step: Commit and push.

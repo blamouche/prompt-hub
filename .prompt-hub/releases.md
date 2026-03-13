@@ -1,5 +1,9 @@
 # Releases
 
+## 0.4.2 - 2026-03-13
+
+- fix(README): removed incorrect mention of `prompt-hub.md` from `prompt-library/app/` — that file is repo-specific, not part of the distributed library.
+
 ## 0.4.1 - 2026-03-13
 
 - docs(README): rewrote README with full architecture documentation — repo structure, installation flow, update logic, custom prompts, and user-owned files.

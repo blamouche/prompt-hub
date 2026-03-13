@@ -43,7 +43,6 @@ prompt-library/
     ...                         ← other domain-specific prompts
   app/
     README.md                   ← instructions for custom project prompts
-    prompt-hub.md               ← Prompt Hub app-level config rules
 install-prompt-hub.sh           ← installer / updater script
 ```
 
@@ -60,7 +59,6 @@ After running the installer, the target project contains:
     <selected>.md       ← only the domains you selected (replaced on update)
   app/
     README.md           ← custom prompt instructions (replaced from source)
-    prompt-hub.md       ← Prompt Hub rules (replaced from source)
     <your-custom>.md    ← your project-specific prompts (never touched)
   prompt-hub-version.md ← installed Prompt Hub version (written by installer)
   version.md            ← local repo version — user-owned, never overwritten
