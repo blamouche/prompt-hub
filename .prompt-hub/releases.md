@@ -1,5 +1,9 @@
 # Releases
 
+## 0.4.3 - 2026-03-13
+
+- feat(core): todo filename format updated to `todo-<timestamp>-<slug>.md` (timestamp: `YYYYMMDD-HHmmss`) in core.md and app-development.md for better chronological ordering.
+
 ## 0.4.2 - 2026-03-13
 
 - fix(README): removed incorrect mention of `prompt-hub.md` from `prompt-library/app/` — that file is repo-specific, not part of the distributed library.
