@@ -1,5 +1,9 @@
 # Releases
 
+## 0.4.1 - 2026-03-13
+
+- docs(README): rewrote README with full architecture documentation — repo structure, installation flow, update logic, custom prompts, and user-owned files.
+
 ## 0.4.0 - 2026-03-09
 
 - feat(installer): pretty output — ASCII art banner, colored sections, step indicators, success/error/warn icons.

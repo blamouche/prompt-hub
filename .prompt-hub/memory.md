@@ -602,3 +602,11 @@
   commands_executed: Write, Edit, bash -n (syntax check), cp
   outcome_status: success
   next_relevant_step: Commit and push.
+
+- date_time: 2026-03-13 CET
+  actor: agent
+  action_summary: Rewrote README.md with full architecture documentation — repo structure (source vs installed), installation flow (5 steps), auto-update logic, custom prompts, configuration options, and user-owned files table. Bumped to 0.4.1.
+  files_changed: README.md, .prompt-hub/version.md, .prompt-hub/releases.md, prompt-library/version.md, .prompt-hub/memory.md
+  commands_executed: Write, Edit
+  outcome_status: success
+  next_relevant_step: Commit and push.
