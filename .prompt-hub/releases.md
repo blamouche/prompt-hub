@@ -1,5 +1,9 @@
 # Releases
 
+## 0.5.1 - 2026-03-25
+
+- fix(notice): removed hardcoded auto-update section from `notice.md` — the section was always included in `agents.md`/`CLAUDE.md` regardless of the user's choice during installation. Auto-update instructions are now only injected when the user explicitly opts in (via `core/auto-update.md`).
+
 ## 0.5.0 - 2026-03-25
 
 - feat(install): added optional auto-update feature during installation/update process. Users can choose to enable or disable automatic updates of the prompt library.

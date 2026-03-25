@@ -1,5 +1,12 @@
 # Memory Log
 
+- date_time: 2026-03-25 11:52:53 CET
+  actor: agent
+  action_summary: Fixed auto-update always being included in agents.md/CLAUDE.md — removed hardcoded auto-update section from notice.md. The installer's conditional logic (core/auto-update.md) now correctly controls inclusion. Bumped to 0.5.1.
+  files_changed: prompt-library/notice.md, .prompt-hub/notice.md, .prompt-hub/version.md, prompt-library/version.md, .prompt-hub/releases.md, .prompt-hub/memory.md, agents.md, CLAUDE.md
+  outcome_status: success
+  next_relevant_step: Commit and push.
+
 - date_time: 2026-03-09 00:06:00 CET
   actor: agent
   action_summary: Created feature/pretty-installer branch. Rewrote installer with ASCII banner, colors, step indicators. Bumped to 0.4.0.

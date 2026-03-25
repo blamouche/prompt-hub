@@ -10,8 +10,8 @@ bypassed by the notice.md content.
 
 ## Steps
 - [x] Create todo file
-- [ ] Remove auto-update section from `prompt-library/notice.md`
-- [ ] Remove auto-update section from `.prompt-hub/notice.md`
-- [ ] Rebuild `agents.md` and `CLAUDE.md` with the correct content
-- [ ] Bump version to 0.5.1, update releases.md and memory.md
+- [x] Remove auto-update section from `prompt-library/notice.md`
+- [x] Remove auto-update section from `.prompt-hub/notice.md`
+- [x] Rebuild `agents.md` and `CLAUDE.md` with the correct content
+- [x] Bump version to 0.5.1, update releases.md and memory.md
 - [ ] Commit and push
