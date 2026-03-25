@@ -1,5 +1,9 @@
 # Releases
 
+## 0.5.0 - 2026-03-25
+
+- feat(install): added optional auto-update feature during installation/update process. Users can choose to enable or disable automatic updates of the prompt library.
+
 ## 0.4.6 - 2026-03-13
 
 - feat(app): added "Lesson-Driven Prompt Correction" rule — whenever a lesson is learned, the relevant `prompt-library/` files must be updated to prevent recurrence before the lesson is considered closed.
