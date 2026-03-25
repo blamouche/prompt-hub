@@ -241,6 +241,34 @@ for domain_file in "${domain_files[@]}"; do
   fi
 done
 
+# ── Auto-update selection ─────────────────────────────────────────────────────
+step "Auto-update configuration"
+
+AUTO_UPDATE_ENABLED=false
+
+# Non-interactive mode: PROMPT_HUB_AUTO_UPDATE can be 'yes' or 'no'
+if [[ -n "${PROMPT_HUB_AUTO_UPDATE:-}" ]]; then
+  if [[ "$PROMPT_HUB_AUTO_UPDATE" == "yes" ]]; then
+    AUTO_UPDATE_ENABLED=true
+  elif [[ "$PROMPT_HUB_AUTO_UPDATE" == "no" ]]; then
+    AUTO_UPDATE_ENABLED=false
+  else
+    error "PROMPT_HUB_AUTO_UPDATE must be 'yes' or 'no'."
+    exit 1
+  fi
+else
+  echo ""
+  while true; do
+    printf "  ${BOLD}Enable auto-update?${RESET} ${DIM}[y/n]${RESET}: "
+    read -r choice
+    case "$choice" in
+      [Yy]|[Yy]es) AUTO_UPDATE_ENABLED=true; break ;;
+      [Nn]|[Nn]o) AUTO_UPDATE_ENABLED=false; break ;;
+      *) warn "Please answer yes or no." ;;
+    esac
+  done
+fi
+
 # ── Build agent files ─────────────────────────────────────────────────────────
 step "Building agent files"
 
@@ -273,8 +301,14 @@ if [[ -d "$TARGET_APP_DIR" ]]; then
 fi
 
 while IFS= read -r core_file; do
-  append_file_to_agents "$core_file"
+  if [[ "$core_file" != "$TARGET_DIR/core/auto-update.md" ]]; then
+    append_file_to_agents "$core_file"
+  fi
 done < <(find "$TARGET_DIR/core" -type f | sort)
+
+if [[ "$AUTO_UPDATE_ENABLED" == "true" ]]; then
+  append_file_to_agents "$TARGET_DIR/core/auto-update.md"
+fi
 
 for selected_domain_file in "${SELECTED_DOMAIN_FILES[@]}"; do
   append_file_to_agents "$DOMAIN_DIR/$selected_domain_file"
@@ -294,6 +328,11 @@ cp "$AGENT_FILE" "$CLAUDE_FILE"
 success "agents.md"
 success "CLAUDE.md"
 info   "Domains: ${BOLD}${selected_domains_display}${RESET}"
+if [[ "$AUTO_UPDATE_ENABLED" == "true" ]]; then
+  info "Auto-update: ${BOLD}enabled${RESET}"
+else
+  info "Auto-update: ${BOLD}disabled${RESET}"
+fi
 
 # ── Git commit ────────────────────────────────────────────────────────────────
 if git -C "$PWD" rev-parse --is-inside-work-tree &>/dev/null; then
