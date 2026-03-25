@@ -1,4 +1,4 @@
-Version: 0.4.0
+Version: 0.5.0
 
 # MANDATORY COMPLIANCE NOTICE
 
@@ -48,6 +48,16 @@ Merged prompt content from app, core, and selected domain file(s).
 
 # Prompt Hub App Rules
 
+## Lesson-Driven Prompt Correction
+
+Whenever a lesson is learned and written to `.prompt-hub/lessons.md`:
+
+1. Identify which prompt file(s) in `prompt-library/` caused or allowed the mistake.
+2. Update those files to add an explicit rule that prevents the issue from recurring.
+3. The fix must be present in `prompt-library/` before the lesson is considered closed.
+
+Skipping this step means the mistake will repeat for every agent that installs a future version. That is a failure.
+
 ## Version File Sync
 
 - Every time `.prompt-hub/version.md` is updated, immediately copy it to `prompt-library/version.md`.
@@ -73,7 +83,16 @@ Use this prompt as the default operating policy for AI agents across all tasks a
 
 ## Task Management
 
-- Plan first: create a task file at `.prompt-hub/todo/todo-<slug>.md` where `<slug>` is a short kebab-case identifier for the task (e.g. `todo-add-auth.md`).
+**Mandatory pre-work — do these steps before anything else, in order:**
+
+1. Read `.prompt-hub/lessons.md` — apply all rules to the current task.
+2. Read `.prompt-hub/memory.md` — restore context from previous sessions.
+3. Read `.prompt-hub/releases.md` — know the current version before any change.
+4. Create the task file at `.prompt-hub/todo/todo-<timestamp>-<slug>.md` — then start work.
+
+Skipping any of these steps is a failure.
+
+- Plan first: create a task file at `.prompt-hub/todo/todo-<timestamp>-<slug>.md` where `<timestamp>` is the current date-time in `YYYYMMDD-HHmmss` format and `<slug>` is a short kebab-case identifier for the task (e.g. `todo-20260313-143000-add-auth.md`).
 - Each task gets its own file; never reuse or overwrite an existing todo file for a different task.
 - For non-trivial tasks (3+ steps or architectural decisions): use plan mode.
 - Verify plan: check in before starting implementation.
@@ -156,7 +175,7 @@ Use this prompt for software application development tasks across web, mobile, b
 
 ## Task Management
 
-- Write plan to `.prompt-hub/todo/todo-<slug>.md` before starting any non-trivial task.
+- Write plan to `.prompt-hub/todo/todo-<timestamp>-<slug>.md` (timestamp: `YYYYMMDD-HHmmss`, e.g. `todo-20260313-143000-add-auth.md`) before starting any non-trivial task.
 - Add a review section to the task's todo file when done.
 - Update `.prompt-hub/lessons.md` after corrections.
 
