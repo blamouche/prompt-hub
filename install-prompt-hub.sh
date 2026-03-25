@@ -288,6 +288,11 @@ append_file_to_agents() {
     cat "$TARGET_DIR/notice.md"
     echo ""
   fi
+  if [[ "$AUTO_UPDATE_ENABLED" == "true" && -f "$TARGET_DIR/core/auto-update.md" ]]; then
+    cat "$TARGET_DIR/core/auto-update.md"
+    echo ""
+    echo ""
+  fi
   echo "# Agents"
   echo ""
   echo "Merged prompt content from app, core, and selected domain file(s)."
@@ -305,10 +310,6 @@ while IFS= read -r core_file; do
     append_file_to_agents "$core_file"
   fi
 done < <(find "$TARGET_DIR/core" -type f | sort)
-
-if [[ "$AUTO_UPDATE_ENABLED" == "true" ]]; then
-  append_file_to_agents "$TARGET_DIR/core/auto-update.md"
-fi
 
 for selected_domain_file in "${SELECTED_DOMAIN_FILES[@]}"; do
   append_file_to_agents "$DOMAIN_DIR/$selected_domain_file"

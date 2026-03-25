@@ -1,5 +1,9 @@
 # Releases
 
+## 0.5.3 - 2026-03-25
+
+- fix(installer): moved auto-update section placement — now injected immediately after the MANDATORY COMPLIANCE NOTICE and before the `# Agents` block, as intended.
+
 ## 0.5.2 - 2026-03-25
 
 - fix(auto-update): added `PROMPT_HUB_AUTO_UPDATE=yes` to the installer command in `auto-update.md` — the auto-update re-run was missing this env var, causing the installer to block on interactive input instead of proceeding non-interactively.

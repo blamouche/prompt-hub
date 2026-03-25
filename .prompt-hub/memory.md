@@ -1,5 +1,12 @@
 # Memory Log
 
+- date_time: 2026-03-25 12:15:00 CET
+  actor: agent
+  action_summary: Moved auto-update section placement in installer — now injected right after MANDATORY COMPLIANCE NOTICE, before # Agents block. Bumped to 0.5.3.
+  files_changed: install-prompt-hub.sh, .prompt-hub/version.md, prompt-library/version.md, .prompt-hub/releases.md, agents.md, CLAUDE.md
+  outcome_status: success
+  next_relevant_step: Commit and push.
+
 - date_time: 2026-03-25 12:05:00 CET
   actor: agent
   action_summary: Fixed auto-update re-run hanging on interactive input — added PROMPT_HUB_AUTO_UPDATE=yes to the installer command in auto-update.md. Bumped to 0.5.2.
