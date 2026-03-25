@@ -1,5 +1,12 @@
 # Memory Log
 
+- date_time: 2026-03-25 12:05:00 CET
+  actor: agent
+  action_summary: Fixed auto-update re-run hanging on interactive input — added PROMPT_HUB_AUTO_UPDATE=yes to the installer command in auto-update.md. Bumped to 0.5.2.
+  files_changed: prompt-library/core/auto-update.md, .prompt-hub/core/auto-update.md, .prompt-hub/version.md, prompt-library/version.md, .prompt-hub/releases.md, agents.md, CLAUDE.md
+  outcome_status: success
+  next_relevant_step: Commit and push.
+
 - date_time: 2026-03-25 11:52:53 CET
   actor: agent
   action_summary: Fixed auto-update always being included in agents.md/CLAUDE.md — removed hardcoded auto-update section from notice.md. The installer's conditional logic (core/auto-update.md) now correctly controls inclusion. Bumped to 0.5.1.

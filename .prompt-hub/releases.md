@@ -1,5 +1,9 @@
 # Releases
 
+## 0.5.2 - 2026-03-25
+
+- fix(auto-update): added `PROMPT_HUB_AUTO_UPDATE=yes` to the installer command in `auto-update.md` — the auto-update re-run was missing this env var, causing the installer to block on interactive input instead of proceeding non-interactively.
+
 ## 0.5.1 - 2026-03-25
 
 - fix(notice): removed hardcoded auto-update section from `notice.md` — the section was always included in `agents.md`/`CLAUDE.md` regardless of the user's choice during installation. Auto-update instructions are now only injected when the user explicitly opts in (via `core/auto-update.md`).
